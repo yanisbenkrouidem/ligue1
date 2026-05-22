@@ -1,0 +1,2823 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+    <head>
+         <link rel="icon" type="image/jpg" href="assets\imgs\ligue1.jpg">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <link rel="stylesheet" href="https://www.footmercato.net/build/css/common.38874d2c.css">
+        <style>
+            body {
+                background-color: #1f1e1d;
+                color: #B0B0B0;
+                font-family: Arial, sans-serif;
+            }
+            :root {
+                --primary: #6B6B6B;
+                --primaryRGB: 107,107,107;
+                --onPrimary: #D1D1D1;
+                --secondary: #474747;
+                --secondaryRGB: 71,71,71;
+                --onSecondary: #B0B0B0;
+                --grey1000: #B0B0B0;
+                --grey900: #7D7D7D;
+                --grey800: #505050;
+                --grey400: #3B3B3B;
+                --grey300: #2C2C2C;
+                --grey200: #1F1F1F;
+                --grey100: #141414;
+                --yellow-card: #FFC107;
+                --red-card: #D32F2F;
+                --success: #7CB342;
+                --warning: #FDB935;
+                --danger: #E53935;
+                --live: #EF3120;
+                --onLive: #FEFCFB;
+                --betclicDark: #FF707D;
+                --parionssportDark: #063574;
+                --pmuDark: #00B84B;
+                --unibetDark: #77D373;
+                --winamaxDark: #F27D84;
+                --zebetDark: #F77882;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                color: var(--primary);
+            }
+            p, span, li, a {
+                color: var(--grey1000);
+            }
+            button {
+                background-color: var(--primary);
+                color: var(--onPrimary);
+                padding: 10px 15px;
+                border: none;
+                border-radius: 5px;
+            }
+            button:hover {
+                background-color: var(--secondary);
+            }
+            a {
+                color: var(--primary);
+                text-decoration: none;
+            }
+            a:hover {
+                color: var(--secondary);
+            }
+            /* Styles pour le nouveau menu */
+            header {
+                background-color: #1f1e1d;
+                padding: 10px 0;
+                border-bottom: 1px solid #474747;
+            }
+            .container.header--area {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+            .header--left img {
+                height: 40px;
+            }
+            .header--right {
+                display: flex;
+                align-items: center;
+            }
+            .header--search form {
+                display: flex;
+                align-items: center;
+            }
+            .header--search input {
+                padding: 5px 10px;
+                border: 1px solid #474747;
+                border-radius: 5px;
+                background-color: #2C2C2C;
+                color: #B0B0B0;
+            }
+            .header--search button {
+                background: none;
+                border: none;
+                cursor: pointer;
+                margin-left: 5px;
+            }
+            .header--search button img {
+                height: 20px;
+            }
+            .header--menu {
+                position: relative;
+                margin-left: 20px;
+            }
+            #menu-toggle {
+                display: none;
+            }
+            .header--menu label {
+                cursor: pointer;
+            }
+            .header--menu label img {
+                height: 25px;
+            }
+            .menu-list {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #2C2C2C;
+                border: 1px solid #474747;
+                border-radius: 5px;
+                padding: 10px;
+                list-style: none;
+                margin: 0;
+            }
+            #menu-toggle:checked ~ .menu-list {
+                display: block;
+            }
+            .menu-list li {
+                margin: 10px 0;
+            }
+            .menu-list a {
+                color: #B0B0B0;
+                text-decoration: none;
+            }
+            .menu-list a:hover {
+                color: #D1D1D1;
+            }
+        </style>
+    </head>
+    <body class="page page--tournament_calendar pageTournament">
+        <header>
+            <div class="line"></div>
+            <div class="container header--area">
+                <div class="header--left">
+                    <a href="/"><img src="assets/imgs/ligue1.jpg" alt="Ligue 1 Logo"></a>
+                </div>
+                <div class="header--right">
+                    <div class="header--search">
+                        <form>
+                            <input type="text" name="search" placeholder="Rechercher un match..."/>
+                            <button>
+                                <img src="assets/imgs/loupe.png" alt="Search icon"/>
+                            </button>
+                        </form>
+                    </div>
+                    <!-- Menu déroulant -->
+                    <div class="header--menu">
+                        <input type="checkbox" id="menu-toggle">
+                        <label for="menu-toggle">
+                            <img src="assets/imgs/menu.png" alt="Menu icon">
+                        </label>
+                        <ul class="menu-list">
+                            <li><a href="accueil.html" aria-label="Accueil">Accueil</a></li>
+                            <li><a href="connexion.html" aria-label="Connexion">Connexion</a></li>
+                            <li><a href="classement.html" aria-label="Classement">Classement</a></li>
+                            <li><a href="actus.html" aria-label="Actualités">Actus</a></li>
+                            <li><a href="en-direct.html" aria-label="En direct">En direct</a></li>
+                            <li><a href="calendrier.html" aria-label="Calendrier">Calendrier</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main">
+            <!-- Contenu principal de la page -->
+            <div class="group group--1">
+                <div class="group__main">
+                    <!-- Contenu de la page -->
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <!-- Pied de page -->
+        </footer>
+        <!-- Autres scripts et éléments -->
+
+            <link rel="stylesheet" href="https://www.footmercato.net/build/css/common.38874d2c.css">
+                    
+                  
+    <script>
+  function imgSlider(anything) {
+    document.querySelector('.starbucks').src = anything;
+  }
+
+  let title = "Ligue 1 McDonalds - Yanis Benkrouidem, Eyoub Belkhiri  ";
+  let speed = 200; // Vitesse en millisecondes
+
+  function scrollTitle() {
+    title = title.substring(1) + title.charAt(0); // Déplace la première lettre à la fin
+    document.title = title;
+    setTimeout(scrollTitle, speed);
+  }
+
+  scrollTitle();
+</script>
+<meta name="description" content="Ne ratez aucun match de Ligue 1 avec les derniers résultats et le programme des prochaines rencontres de L1"/>
+
+
+<meta property="og:site_name" content="Foot Mercato : Info Transferts Football - Actu Foot Transfert"/>
+<meta property="og:url" content="https://www.footmercato.net/france/ligue-1/calendrier/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Match Ligue 1 : Calendrier &amp; Résultats L1 2024/2025"/>
+<meta property="og:description" content="Ne ratez aucun match de Ligue 1 avec les derniers résultats et le programme des prochaines rencontres de L1"/>
+<meta property="og:image" content="https://assets-fr.imgfoot.com/media/cache/150x150/ligue-1-6694dd9662235.png"/>
+    <meta property="og:image:width" content="150"/>
+    <meta property="og:image:height" content="150"/>
+
+<meta name="twitter:site" content="@yanisbnkr"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Match Ligue 1 : Calendrier &amp; Résultats L1 2024/2025"/>
+<meta name="twitter:description" content="Ne ratez aucun match de Ligue 1 avec les derniers résultats et le programme des prochaines rencontres de L1"/>
+<meta name="twitter:image" content="https://assets-fr.imgfoot.com/media/cache/150x150/ligue-1-6694dd9662235.png"/>
+<meta name="twitter:url" content="https://www.footmercato.net/france/ligue-1/calendrier/"/>
+<meta name="twitter:app:name:iphone" content="Foot Mercato"/>
+<meta name="twitter:app:id:iphone" content="537919329"/>
+<meta name="twitter:app:name:ipad" content="Foot Mercato"/>
+<meta name="twitter:app:id:ipad" content="537919329"/>
+<meta name="twitter:app:name:googleplay" content="Foot Mercato"/>
+<meta name="twitter:app:id:googleplay" content="net.footmercato.mobile"/>
+<meta name="twitter:widgets:theme" content=""/>
+    <meta name="twitter:creator" content=""/>
+
+<meta property="fb:app_id" content="188207067884072"/>
+
+    <link rel="canonical" href="https://www.footmercato.net/france/ligue-1/calendrier/"/>
+
+
+
+
+
+
+
+<meta name="robots" content="max-image-preview:large">
+
+<meta name="apple-mobile-web-app-title" content="Ligue 1 McDonalds - Yanis Benkrouidem, Eyoub Belkhiri">
+<meta name="apple-itunes-app" content="app-id=537919329">
+<meta name="application-name" content="Ligue 1 McDonalds - Yanis Benkrouidem, Eyoub Belkhiri">
+
+    <meta name="theme-color" content="#f3f3f2">
+
+<meta name="msapplication-TileColor" content="#072AC8">
+<meta name="msapplication-TileImage" content="https://www.footmercato.net/build/favicons/mstile-150x150.png">
+<meta name="msapplication-config" content="https://www.footmercato.net/browserconfig.xml">
+
+        
+        <link rel="manifest" href="https://www.footmercato.net/manifest.json">
+        <link rel="apple-touch-icon" href="https://www.footmercato.net/build/favicons/apple-touch-icon.003c90f9.png">
+<link rel="icon" type="imagse/png" sizes="16x16" href="https://www.footmercato.net/build/favicons/favicon-16x16.92bf6a1d.png">
+<link rel="icon" type="image/png" id="favicon32" sizes="32x32" href="https://www.footmercato.net/build/favicons/favicon-32x32.45ab321b.png" data-src-alert="https://www.footmercato.net/build/favicons/favicon-32x32-alert.4f670079.png" data-src="https://www.footmercato.net/build/favicons/favicon-32x32.45ab321b.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://www.footmercato.net/build/favicons/android-chrome-192x192.88189be8.png"  />
+<link rel="icon" type="image/png" sizes="512x512" href="https://www.footmercato.net/build/favicons/android-chrome-512x512.b8dfbce8.png"  />
+<link rel="mask-icon" href="https://www.footmercato.net/build/favicons/safari-pinned-tab.430333f4.svg" color="#072ac8">
+
+
+                    <script type="application/ld+json">
+                [{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","name":"Accueil","position":1,"item":"https:\/\/www.footmercato.net\/"},{"@type":"ListItem","name":"France","position":2,"item":"https:\/\/www.footmercato.net\/france\/"},{"@type":"ListItem","name":"Ligue 1 McDonald's","position":3,"item":"https:\/\/www.footmercato.net\/france\/ligue-1\/"},{"@type":"ListItem","name":"Calendrier","position":4}]},{"@context":"https:\/\/schema.org","@type":"SportsOrganization","name":"Ligue 1 McDonald's","alternateName":"Ligue 1","mainEntityOfPage":"https:\/\/www.footmercato.net\/france\/ligue-1\/calendrier\/","sport":"Soccer","image":"https:\/\/assets-fr.imgfoot.com\/media\/cache\/150x150\/ligue-1-6694dd9662235.png"}]
+            </script>
+                    </head>
+
+    <body class="page page--tournament_calendar pageTournament  " data-kvcontent="competition8879186764835452557"data-kvcompetition="8879186764835452557" data-id="2825525736518882482" data-page="tournament_calendar"  data-website="Foot Mercato" data-privacyPolicyURL="https://www.footmercato.net/politique-cookie" data-disqus=footmercato-1 >
+                                            <div class="reg-int">
+                        <div id="/45503615/tab_footmercato/interstitiel_data"
+             class="gtag gtag--t gtag--int "
+             data-sizes='[[1, 1]]'
+             data-context="tab"
+             data-code="interstitiel_data"
+             data-path="/45503615/tab_footmercato/interstitiel_data"
+             data-appnexus-id=""
+             data-teads-id=""
+             data-rubicon-id=""
+             data-ix-id=""
+                             data-smart-id=""
+             data-mediasquare-id=""
+             data-nexx360-id=""
+             data-seedtag-id=""
+                
+        ></div>
+    
+
+                        <div id="/45503615/mweb_footmercato/interstitiel_data"
+             class="gtag gtag--m gtag--int "
+             data-sizes='[[1, 1]]'
+             data-context="mweb"
+             data-code="interstitiel_data"
+             data-path="/45503615/mweb_footmercato/interstitiel_data"
+             data-appnexus-id=""
+             data-teads-id=""
+             data-rubicon-id=""
+             data-ix-id=""
+                             data-smart-id=""
+             data-mediasquare-id=""
+             data-nexx360-id=""
+             data-seedtag-id=""
+                
+        ></div>
+    
+        </div>
+        <div class="reg-ovr">
+                <div id="/45503615/mweb_footmercato/overlay_data"
+             class="gtag gtag--m gtag--ovr "
+             data-sizes='[[300, 50], [320, 50], [300, 100], [320, 100], &quot;fluid&quot;]'
+             data-context="mweb"
+             data-code="overlay_data"
+             data-path="/45503615/mweb_footmercato/overlay_data"
+             data-appnexus-id="19062951"
+             data-teads-id="130817"
+             data-rubicon-id="306442"
+             data-ix-id="559156"
+                             data-smart-id="91512"
+             data-mediasquare-id="footmercato.net_overlay-data_atf_banner_mobile"
+             data-nexx360-id=""
+             data-seedtag-id="34290298"
+                
+        ></div>
+    
+    <a class="reg-ovr_close hidden">&times;</a>
+</div>                  
+                                                        <div id="/45503615/desk_footmercato/header_data"
+             class="gtag gtag--d  gtag--header"
+             data-sizes='[[970, 250], [1800, 1000], [728, 90], [970, 90], [1000, 250]]'
+             data-context="desk"
+             data-code="header_data"
+             data-path="/45503615/desk_footmercato/header_data"
+             data-appnexus-id="19062921"
+             data-teads-id="130817"
+             data-rubicon-id="703174"
+             data-ix-id="559128"
+                             data-smart-id="91491"
+             data-mediasquare-id="footmercato.net_header_atf_mban_desktop"
+             data-nexx360-id="bma2vyn8"
+             data-seedtag-id="34290278"
+                
+        ></div>
+    
+                    
+                            <div class="group group--1 ">
+                                    <div class="group__main ">
+                        <div class="dataTopBar">
+    <div class="dataTopBar__actionBack">
+        <button class="dataTopBar__back" aria-label="retour" data-navigationBack>
+            
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M21.75 11.25h-15A.752.752 0 0 0 6 12c0 .412.338.75.75.75h15c.413 0 .75-.338.75-.75a.752.752 0 0 0-.75-.75Z" />
+    <path d="M3.217 12.533A.742.742 0 0 1 3 12c0-.203.075-.39.217-.533l7.193-7.185a.747.747 0 1 0-1.058-1.057L2.16 10.41A2.23 2.23 0 0 0 1.5 12c0 .6.232 1.162.66 1.59l7.192 7.192c.15.15.338.218.533.218a.747.747 0 0 0 .533-1.275l-7.193-7.193h-.008Z" />
+</svg>
+
+
+        </button>
+    </div>
+
+    <div class="dataTopBar__pageDataHeaderIdentity">
+        <div class="pageDataHeaderIdentity ">
+    <div class="pageDataHeaderIdentity__image pageDataHeaderIdentity__image--tournament">
+            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/150x150/ligue-1-6694dd9662235.png"
+            
+                                        alt="Logo Ligue 1"
+                width="16"        height="16"    />
+
+    </div>
+    <div class="pageDataHeaderIdentity__labels">
+        <div class="pageDataHeaderIdentity__label">Ligue 1 : Calendrier &amp; Résultats</div>
+                    <div class="pageDataHeaderIdentity__secondaryLabel">
+                                    Match
+                            </div>
+            </div>
+</div>
+
+    </div>
+
+    <div class="dataTopBar__actions">
+                            <button class="dataTopBar__favoriteButton" aria-label="⭐️" data-favorite="0" data-id="8879186764835452557" data-type="competitions">
+                
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path class="svgActive" d="M22.417 9.457c-.217-.637-.78-1.05-1.44-1.05l-5.767-.03-1.838-5.872a1.433 1.433 0 0 0-1.38-1.012c-.637 0-1.192.404-1.38 1.012L8.76 8.4H3.007c-.66 0-1.222.412-1.44 1.05a1.56 1.56 0 0 0 .533 1.748l4.68 3.547-1.785 5.723c-.203.652.03 1.357.585 1.747a1.476 1.476 0 0 0 1.762-.03l4.613-3.532 4.68 3.532a1.474 1.474 0 0 0 1.762.03c.555-.39.788-1.095.585-1.747l-1.785-5.723 4.68-3.547c.533-.405.75-1.11.533-1.748l.007.008Z"/>
+  <path class="svgInactive"  d="M22.418 9.457a1.503 1.503 0 0 0-1.44-1.05l-5.768-.022-1.83-5.88A1.431 1.431 0 0 0 12 1.493c-.637 0-1.185.397-1.38 1.02L8.903 8.024l-.135.383H3.023c-.54 0-1.02.277-1.298.735a1.59 1.59 0 0 0-.045 1.552.747.747 0 0 0 1.013.307A.747.747 0 0 0 3 9.99c-.007-.015 0-.068.023-.082h5.745c.66 0 1.245-.428 1.447-1.073L12 3.12l1.785 5.722a1.526 1.526 0 0 0 1.448 1.073h5.745v.098l-2.633 1.995s-.045.037-.067.06L15.9 13.86s-.075.06-.097.09a.729.729 0 0 0-.188.758l1.943 6.225c.015.06-.015.067-.008.067l-4.68-3.532a1.451 1.451 0 0 0-1.747 0l-4.665 3.54s-.038-.015-.023-.075l1.943-6.226a.81.81 0 0 0-.285-.847l-2.258-1.702a.752.752 0 0 0-1.05.15.752.752 0 0 0 .15 1.05l1.86 1.402-1.785 5.723c-.21.652.03 1.357.585 1.747a1.476 1.476 0 0 0 1.763-.03l4.612-3.532 4.68 3.532a1.474 1.474 0 0 0 1.763.038c.555-.39.787-1.096.585-1.748l-1.785-5.722 2.047-1.546s.053-.037.075-.06l2.558-1.942c.532-.398.75-1.103.532-1.748l-.007-.014Z"/>
+</svg>
+
+
+            </button>
+            </div>
+</div>
+
+    <div class="dataHeader">
+    <div class="dataHeader__pageDataHeaderIdentity">
+        <div class="pageDataHeaderIdentity pageDataHeaderIdentity--big">
+    <div class="pageDataHeaderIdentity__image pageDataHeaderIdentity__image--tournament">
+            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/150x150/ligue-1-6694dd9662235.png"
+            
+                                        alt="Logo Ligue 1"
+                width="28"        height="28"    />
+
+    </div>
+    <h1 class="pageDataHeaderIdentity__labels">
+        <div class="pageDataHeaderIdentity__label">Ligue 1 : Calendrier &amp; Résultats</div>
+                    <div class="pageDataHeaderIdentity__secondaryLabel">
+                                    Match
+                            </div>
+            </h1>
+</div>
+
+    </div>
+                <div class="dataHeader__select">
+            <div class="select " >
+    
+    <div class="select__input" data-select="1">
+                                    <a role="button" aria-label="2024/2025" class="select__inputButton" data-selectbutton="1">
+                                                            <span class="select__inputButtonLabels">
+                                                    <h2 class="select__inputButtonLabel" data-selectlabel>2024/2025</h2>
+                                                                    </span>
+                    <span class="select__inputButtonChevron">
+                        
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 20.25a2.54 2.54 0 0 1-1.785-.735l-8.498-8.498A.747.747 0 1 1 2.775 9.96l8.497 8.497c.398.398 1.05.398 1.448 0l8.497-8.497a.747.747 0 1 1 1.058 1.057l-8.498 8.498a2.508 2.508 0 0 1-1.785.735H12Z"/>
+</svg>
+
+
+                    </span>
+                </a>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <ul class="select__floatingList hidden" data-sele                        <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton active "
+                       href="https://www.footmercato.net/france/ligue-1/2024-2025/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2024/2025</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2023-2024/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2023/2024</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2022-2023/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2022/2023</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2021-2022/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2021/2022</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2020-2021/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2020/2021</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2019-2020/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2019/2020</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2018-2019/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2018/2019</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2017-2018/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2017/2018</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2016-2017/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2016/2017</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2015-2016/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2015/2016</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2014-2015/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2014/2015</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2013-2014/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2013/2014</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2012-2013/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2012/2013</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2011-2012/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2011/2012</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2010-2011/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2010/2011</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2009-2010/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2009/2010</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2008-2009/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2008/2009</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2007-2008/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2007/2008</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2006-2007/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2006/2007</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2005-2006/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2005/2006</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2004-2005/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2004/2005</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2003-2004/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2003/2004</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2002-2003/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2002/2003</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2001-2002/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2001/2002</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/2000-2001/"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>2000/2001</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                    </ul>
+    </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+                </div>
+            
+            
+                        </div>
+    <div class="group group--2 ">
+                                    <div class="group__main ">
+                        <div class="tabs tabs--menu tabs--scrollable " data-tabs >
+    <nav class="tabs__links" data-tabsLinks>
+        <ul>
+                            <li>
+                    <a href="https://www.footmercato.net/france/ligue-1/" class=" "
+                       data-tabsLink   >
+                                                    Infos
+                        
+                                            </a>
+                                    </li>
+                            <li>
+                    <a href="https://www.footmercato.net/france/ligue-1/transfert" class=" "
+                       data-tabsLink  data-api="https://www.footmercato.net/api/2.0/tournament/france/ligue-1/championship-news" >
+                                                    Actus transferts
+                        
+                                            </a>
+                                    </li>
+                            <li>
+                    <a href="https://www.footmercato.net/france/ligue-1/classement" class=" "
+                       data-tabsLink   >
+                                                    Classement
+                        
+                                            </a>
+                                    </li>
+                            <li>
+                    <a href="https://www.footmercato.net/france/ligue-1/calendrier/" class="active "
+                       data-tabsLink   >
+                                                    Calendrier
+                        
+                                            </a>
+                                    </li>
+                            <li>
+                    <a href="https://www.footmercato.net/france/ligue-1/buteur" class=" "
+                       data-tabsLink   >
+                                                    Buteurs
+                        
+                                            </a>
+                                    </li>
+                            <li>
+                    <a href="https://www.footmercato.net/france/ligue-1/passeur" class=" "
+                       data-tabsLink   >
+                                                    Passeurs
+                        
+                                            </a>
+                                    </li>
+                            <li>
+                    <a href="https://www.footmercato.net/france/ligue-1/tableau/" class=" "
+                       data-tabsLink   >
+                                                    Transferts
+                        
+                                            </a>
+                                    </li>
+                            <li>
+                    <a href="https://www.footmercato.net/programme-tv/france/ligue-1" class=" "
+                       data-tabsLink   >
+                                                    Programme TV
+                        
+                                            </a>
+                                    </li>
+                            <li>
+                    <a href="#" class=" tabs__linkSubMenu"
+                       data-tabsLink data-tabsLinkSubMenu  >
+                                                    Statistiques
+                        
+                                                    <span class="tabs__subMenuPicto">
+                                
+<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 20.25a2.54 2.54 0 0 1-1.785-.735l-8.498-8.498A.747.747 0 1 1 2.775 9.96l8.497 8.497c.398.398 1.05.398 1.448 0l8.497-8.497a.747.747 0 1 1 1.058 1.057l-8.498 8.498a2.508 2.508 0 0 1-1.785.735H12Z"/>
+</svg>
+
+
+                            </span>
+                                            </a>
+                                            <div class="tabs__subMenu">
+                                                            <a href="https://www.footmercato.net/france/ligue-1/statistique-equipe" class="tabs__subMenuLink">
+                                    Stats équipes
+                                </a>
+                                                            <a href="https://www.footmercato.net/france/ligue-1/statistique-joueur" class="tabs__subMenuLink">
+                                    Stats joueurs
+                                </a>
+                                                            <a href="https://www.footmercato.net/france/ligue-1/statistique-arbitre" class="tabs__subMenuLink">
+                                    Stats arbitres
+                                </a>
+                                                            <a href="https://www.footmercato.net/france/ligue-1/decisif" class="tabs__subMenuLink">
+                                    Joueurs décisifs
+                                </a>
+                                                    </div>
+                                    </li>
+                            <li>
+                    <a href="#" class=" tabs__linkSubMenu"
+                       data-tabsLink data-tabsLinkSubMenu  >
+                                                    Infos
+                        
+                                                    <span class="tabs__subMenuPicto">
+                                
+<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 20.25a2.54 2.54 0 0 1-1.785-.735l-8.498-8.498A.747.747 0 1 1 2.775 9.96l8.497 8.497c.398.398 1.05.398 1.448 0l8.497-8.497a.747.747 0 1 1 1.058 1.057l-8.498 8.498a2.508 2.508 0 0 1-1.785.735H12Z"/>
+</svg>
+
+
+                            </span>
+                                            </a>
+                                            <div class="tabs__subMenu">
+                                                            <a href="https://www.footmercato.net/france/ligue-1/club" class="tabs__subMenuLink">
+                                    Équipes
+                                </a>
+                                                            <a href="https://www.footmercato.net/france/ligue-1/joueur" class="tabs__subMenuLink">
+                                    Joueurs
+                                </a>
+                                                            <a href="https://www.footmercato.net/france/ligue-1/arbitre" class="tabs__subMenuLink">
+                                    Arbitres
+                                </a>
+                                                            <a href="https://www.footmercato.net/france/ligue-1/palmares" class="tabs__subMenuLink">
+                                    Palmarès
+                                </a>
+                                                            <a href="https://www.footmercato.net/france/ligue-1/records" class="tabs__subMenuLink">
+                                    Records
+                                </a>
+                                                            <a href="https://www.footmercato.net/france/ligue-1/stade" class="tabs__subMenuLink">
+                                    Stades
+                                </a>
+                                                            <a href="https://www.footmercato.net/france/ligue-1/maillot" class="tabs__subMenuLink">
+                                    Maillots
+                                </a>
+                                                            <a href="https://www.footmercato.net/france/ligue-1/reglement" class="tabs__subMenuLink">
+                                    Règlement
+                                </a>
+                                                    </div>
+                                    </li>
+                        <span class="tabs__indicator" data-tabsIndicator></span>
+        </ul>
+    </nav>
+    <div class="tabs__subMenuSlot" data-tabsSubMenuSlot></div>
+    </div>
+
+
+                </div>
+            
+            
+                        </div>
+    <div class="group group--11 ">
+                                    <div class="group__main ">
+                                    <div id="/45503615/mweb_footmercato/atf_data_2"
+             class="gtag gtag--m gtag--atf_data_2 "
+             data-sizes='[[320, 50], [320, 100], &quot;fluid&quot;]'
+             data-context="mweb"
+             data-code="atf_data_2"
+             data-path="/45503615/mweb_footmercato/atf_data_2"
+             data-appnexus-id="19062946"
+             data-teads-id="130817"
+             data-rubicon-id="1066838"
+             data-ix-id="559151"
+                             data-smart-id="91502"
+             data-mediasquare-id="footmercato.net_header_atf_banner_mobile"
+             data-nexx360-id="z8hrc2q3"
+             data-seedtag-id="34290317"
+                
+        ></div>
+    
+
+    
+<div class="blockSingle " >
+    <div class="blockSingle__container">
+        
+        <div class="blockSingle__content ">
+            <div class="select " >
+            <a class="select__navigation select__navigation--prev"
+            role="button"
+            aria-label="→"
+            href="https://www.footmercato.net/france/ligue-1/calendrier/5203489641104829144-journee-26"        >
+            
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M21.75 11.25h-15A.752.752 0 0 0 6 12c0 .412.338.75.75.75h15c.413 0 .75-.338.75-.75a.752.752 0 0 0-.75-.75Z" />
+    <path d="M3.217 12.533A.742.742 0 0 1 3 12c0-.203.075-.39.217-.533l7.193-7.185a.747.747 0 1 0-1.058-1.057L2.16 10.41A2.23 2.23 0 0 0 1.5 12c0 .6.232 1.162.66 1.59l7.192 7.192c.15.15.338.218.533.218a.747.747 0 0 0 .533-1.275l-7.193-7.193h-.008Z" />
+</svg>
+
+
+        </a>
+    
+    <div class="select__input" data-select="1">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <a role="button" aria-label="Journée 27" class="select__inputButton" data-selectbutton="1">
+                                                            <span class="select__inputButtonLabels">
+                                                    <span class="select__inputButtonLabel" data-selectlabel>Journée 27</span>
+                                                                    </span>
+                    <span class="select__inputButtonChevron">
+                        
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 20.25a2.54 2.54 0 0 1-1.785-.735l-8.498-8.498A.747.747 0 1 1 2.775 9.96l8.497 8.497c.398.398 1.05.398 1.448 0l8.497-8.497a.747.747 0 1 1 1.058 1.057l-8.498 8.498a2.508 2.508 0 0 1-1.785.735H12Z"/>
+</svg>
+
+
+                    </span>
+                </a>
+                                                                                                                                                                        <ul class="select__floatingList hidden" data-selectlist="1">
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/956671713812020736-journee-1"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 1</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/6117861037521633795-journee-2"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 2</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/6468537813914014558-journee-3"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 3</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/3346563968822116665-journee-4"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 4</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/2118885136855244762-journee-5"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 5</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/891995467005196107-journee-6"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 6</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/4275043582857424707-journee-7"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 7</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/7845753591776851913-journee-8"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 8</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/8643057346286361739-journee-9"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 9</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/4228704074890270016-journee-10"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 10</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/399101361880287052-journee-11"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 11</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/2715832554941821167-journee-12"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 12</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/2521580049330861356-journee-13"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 13</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/2433671303732438062-journee-14"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 14</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/6165810030149912751-journee-15"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 15</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/1931076108418765898-journee-16"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 16</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/7912785403151776759-journee-17"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 17</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/5280818504937909898-journee-18"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 18</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/4022226663512429935-journee-19"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 19</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/9210103780450523665-journee-20"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 20</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/4043536396402026582-journee-21"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 21</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/8934253195533834047-journee-22"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 22</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/2880867718750172350-journee-23"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 23</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/6959062031231353023-journee-24"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 24</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/7842534947314161135-journee-25"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 25</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/5203489641104829144-journee-26"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 26</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton active "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/2938958460958885483-journee-27"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 27</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/7657164297422389616-journee-28"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 28</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/4696936372475810254-journee-29"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 29</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/2491197282398948070-journee-30"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 30</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/5481333165115677730-journee-31"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 31</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/446406462446962003-journee-32"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 32</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/933722925046530213-journee-33"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 33</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                            <li class="select__item">
+                    <a role="button"
+                       class="select__itemButton  "
+                       href="https://www.footmercato.net/france/ligue-1/calendrier/7051889609848757650-journee-34"                    >
+                        <div class="select__inputButtonImages" data-selectimage>
+                                                                                </div>
+                        <span class="select__itemWrapper">
+                            <span class="select__itemLabel" data-selectlabel>Journée 34</span>
+                            <span class="select__itemSubLabel" data-selectsublabel></span>
+                        </span>
+                    </a>
+                </li>
+                    </ul>
+    </div>
+
+            <a class="select__navigation select__navigation--next"
+            role="button"
+            aria-label="←"
+            href="https://www.footmercato.net/france/ligue-1/calendrier/7657164297422389616-journee-28"        >
+            
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M18 12a.752.752 0 0 0-.75-.75h-15a.752.752 0 0 0-.75.75c0 .412.337.75.75.75h15c.413 0 .75-.338.75-.75Z" />
+    <path d="m21.84 10.41-7.192-7.193a.747.747 0 1 0-1.058 1.058l7.192 7.192c.143.143.218.33.218.533s-.075.39-.218.533l-7.192 7.192A.747.747 0 0 0 14.123 21a.768.768 0 0 0 .532-.218l7.193-7.192c.427-.428.66-.99.66-1.59 0-.6-.233-1.162-.66-1.59h-.008Z" />
+</svg>
+
+
+        </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    
+<div class="blockVertical  ">
+            <div class="blockVertical__title">
+            <div class="title">
+    <p class="title__left">vendredi 28 mars 2025</p></div>
+
+        </div>
+    
+    <div class="blockVertical__contents  ">
+                    <div class="blockVertical__content ">
+                
+<div class="matchFull" data-live-id="7181505826567520469" data-live-value="fixture000" data-live="0">
+    <a href="/live/7181505826567520469-strasbourg-vs-lyon" class="matchFull__link">
+                    <span class="matchFull__teams">
+
+                <span class="matchFull__team">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/club/strasbourg.png"
+            
+                                        alt="Logo Strasbourg"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Strasbourg</span></span>
+</span>
+
+                
+                <span class="matchFull__team matchFull__team--away">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/club/olympique-lyonnais.png"
+            
+                                        alt="Logo Lyon"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Lyon</span></span>
+</span>
+
+                
+            </span>
+                <span class="matchFull__infos">
+                            <span class="matchFull__dateTimeChrono"><span class="matchFull__infosDate">
+                            <time datetime="2025-03-28T19:45:00+00:00">
+                                20:45
+                            </time>
+                        </span></span>
+                                    <span class="matchFull__broadcasts">
+                            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/150x150/dazn-671b98d475358.png"
+            
+                                        alt="Logo DAZN"
+        class="matchFull__broadcastImage"        width="40"        height="40"    />
+
+
+                                            </span>
+                                    </span>
+    </a>
+
+            <a class="matchOddsInline matchOddsInline--parionssport" href="https://ad.doubleclick.net/ddm/trackclk/N30402.276174FOOTMERCATO/B33074373.411688651;dc_trk_aid=604035030;dc_trk_cid=228052097;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ltd=;dc_tdv=1" target="_blank" rel="sponsored" data-track-click="bet_link" data-track-label="parionssport" >
+    <div class="matchOddsInline__imageContainer">
+            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2018'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/bookmaker/parionssport.png"
+            
+                                        alt="parionssport"
+        class="matchOddsInline__image"        width="18"        height="18"    />
+
+    </div>
+
+    <span class="matchOddsInline__values">
+        <span class="matchOddsInline__value">
+            <span>1</span> <strong>2.55</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>N</span> <strong>3.45</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>2</span> <strong>2.40</strong>
+        </span>
+    </span>
+
+    <span class="matchOddsInline__buttonContainer">
+        <span class="matchOddsInline__button">15€ offerts</span>
+    </span>
+</a>
+
+    </div>
+
+            </div>
+            </div>
+</div>
+
+    
+<div class="blockVertical  ">
+            <div class="blockVertical__title">
+            <div class="title">
+    <p class="title__left">samedi 29 mars 2025</p></div>
+
+        </div>
+    
+    <div class="blockVertical__contents  ">
+                    <div class="blockVertical__content ">
+                
+<div class="matchFull" data-live-id="2375359838011515468" data-live-value="fixture000" data-live="0">
+    <a href="/live/2375359838011515468-reims-vs-marseille" class="matchFull__link">
+                    <span class="matchFull__teams">
+
+                <span class="matchFull__team">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/stade-reims.png"
+            
+                                        alt="Logo Reims"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Reims</span></span>
+</span>
+
+                
+                <span class="matchFull__team matchFull__team--away">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/club/olympique-marseille.png"
+            
+                                        alt="Logo Marseille"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Marseille</span></span>
+</span>
+
+                
+            </span>
+                <span class="matchFull__infos">
+                            <span class="matchFull__dateTimeChrono"><span class="matchFull__infosDate">
+                            <time datetime="2025-03-29T16:00:00+00:00">
+                                17:00
+                            </time>
+                        </span></span>
+                                    <span class="matchFull__broadcasts">
+                            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/150x150/bein-1-67d187bb512e3.png"
+            
+                                        alt="logo bein sport 1"
+        class="matchFull__broadcastImage"        width="40"        height="40"    />
+
+
+                                            </span>
+                                    </span>
+    </a>
+
+            <a class="matchOddsInline matchOddsInline--parionssport" href="https://ad.doubleclick.net/ddm/trackclk/N30402.276174FOOTMERCATO/B33074373.411688651;dc_trk_aid=604035030;dc_trk_cid=228052097;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ltd=;dc_tdv=1" target="_blank" rel="sponsored" data-track-click="bet_link" data-track-label="parionssport" >
+    <div class="matchOddsInline__imageContainer">
+            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2018'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/bookmaker/parionssport.png"
+            
+                                        alt="parionssport"
+        class="matchOddsInline__image"        width="18"        height="18"    />
+
+    </div>
+
+    <span class="matchOddsInline__values">
+        <span class="matchOddsInline__value">
+            <span>1</span> <strong>4.80</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>N</span> <strong>3.90</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>2</span> <strong>1.57</strong>
+        </span>
+    </span>
+
+    <span class="matchOddsInline__buttonContainer">
+        <span class="matchOddsInline__button">15€ offerts</span>
+    </span>
+</a>
+
+    </div>
+
+            </div>
+                    <div class="blockVertical__content ">
+                
+<div class="matchFull" data-live-id="2314498773232772399" data-live-value="fixture000" data-live="0">
+    <a href="/live/2314498773232772399-st-etienne-vs-paris-saint-germain" class="matchFull__link">
+                    <span class="matchFull__teams">
+
+                <span class="matchFull__team">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/asse-62bdd02abaa09.png"
+            
+                                        alt="Logo St Étienne"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">ASSE</span></span>
+</span>
+
+                
+                <span class="matchFull__team matchFull__team--away">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/club/psg.png"
+            
+                                        alt="Logo Paris Saint-Germain"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">PSG</span></span>
+</span>
+
+                
+            </span>
+                <span class="matchFull__infos">
+                            <span class="matchFull__dateTimeChrono"><span class="matchFull__infosDate">
+                            <time datetime="2025-03-29T18:00:00+00:00">
+                                19:00
+                            </time>
+                        </span></span>
+                                    <span class="matchFull__broadcasts">
+                            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/150x150/dazn-671b98d475358.png"
+            
+                                        alt="Logo DAZN"
+        class="matchFull__broadcastImage"        width="40"        height="40"    />
+
+
+                                            </span>
+                                    </span>
+    </a>
+
+            <a class="matchOddsInline matchOddsInline--parionssport" href="https://ad.doubleclick.net/ddm/trackclk/N30402.276174FOOTMERCATO/B33074373.411688651;dc_trk_aid=604035030;dc_trk_cid=228052097;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ltd=;dc_tdv=1" target="_blank" rel="sponsored" data-track-click="bet_link" data-track-label="parionssport" >
+    <div class="matchOddsInline__imageContainer">
+            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2018'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/bookmaker/parionssport.png"
+            
+                                        alt="parionssport"
+        class="matchOddsInline__image"        width="18"        height="18"    />
+
+    </div>
+
+    <span class="matchOddsInline__values">
+        <span class="matchOddsInline__value">
+            <span>1</span> <strong>10.5</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>N</span> <strong>7.00</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>2</span> <strong>1.16</strong>
+        </span>
+    </span>
+
+    <span class="matchOddsInline__buttonContainer">
+        <span class="matchOddsInline__button">15€ offerts</span>
+    </span>
+</a>
+
+    </div>
+
+            </div>
+                    <div class="blockVertical__content ">
+                
+<div class="matchFull" data-live-id="8601419973509062880" data-live-value="fixture000" data-live="0">
+    <a href="/live/8601419973509062880-monaco-vs-nice" class="matchFull__link">
+                    <span class="matchFull__teams">
+
+                <span class="matchFull__team">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/club/monaco.png"
+            
+                                        alt="Logo Monaco"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Monaco</span></span>
+</span>
+
+                
+                <span class="matchFull__team matchFull__team--away">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/club/ogc-nice.png"
+            
+                                        alt="Logo OGC Nice"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Nice</span></span>
+</span>
+
+                
+            </span>
+                <span class="matchFull__infos">
+                            <span class="matchFull__dateTimeChrono"><span class="matchFull__infosDate">
+                            <time datetime="2025-03-29T20:05:00+00:00">
+                                21:05
+                            </time>
+                        </span></span>
+                                    <span class="matchFull__broadcasts">
+                            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/150x150/dazn-671b98d475358.png"
+            
+                                        alt="Logo DAZN"
+        class="matchFull__broadcastImage"        width="40"        height="40"    />
+
+
+                                            </span>
+                                    </span>
+    </a>
+
+            <a class="matchOddsInline matchOddsInline--parionssport" href="https://ad.doubleclick.net/ddm/trackclk/N30402.276174FOOTMERCATO/B33074373.411688651;dc_trk_aid=604035030;dc_trk_cid=228052097;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ltd=;dc_tdv=1" target="_blank" rel="sponsored" data-track-click="bet_link" data-track-label="parionssport" >
+    <div class="matchOddsInline__imageContainer">
+            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2018'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/bookmaker/parionssport.png"
+            
+                                        alt="parionssport"
+        class="matchOddsInline__image"        width="18"        height="18"    />
+
+    </div>
+
+    <span class="matchOddsInline__values">
+        <span class="matchOddsInline__value">
+            <span>1</span> <strong>1.84</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>N</span> <strong>3.80</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>2</span> <strong>3.40</strong>
+        </span>
+    </span>
+
+    <span class="matchOddsInline__buttonContainer">
+        <span class="matchOddsInline__button">15€ offerts</span>
+    </span>
+</a>
+
+    </div>
+
+            </div>
+            </div>
+</div>
+
+    
+<div class="blockVertical  ">
+            <div class="blockVertical__title">
+            <div class="title">
+    <p class="title__left">dimanche 30 mars 2025</p></div>
+
+        </div>
+    
+    <div class="blockVertical__contents  ">
+                    <div class="blockVertical__content ">
+                
+<div class="matchFull" data-live-id="8083496274320249707" data-live-value="fixture000" data-live="0">
+    <a href="/live/8083496274320249707-toulouse-vs-brest" class="matchFull__link">
+                    <span class="matchFull__teams">
+
+                <span class="matchFull__team">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/club/toulouse.png"
+            
+                                        alt="Logo Toulouse"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Toulouse</span></span>
+</span>
+
+                
+                <span class="matchFull__team matchFull__team--away">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/club/brest.png"
+            
+                                        alt="Logo Brest"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Brest</span></span>
+</span>
+
+                
+            </span>
+                <span class="matchFull__infos">
+                            <span class="matchFull__dateTimeChrono"><span class="matchFull__infosDate">
+                            <time datetime="2025-03-30T13:00:00+00:00">
+                                15:00
+                            </time>
+                        </span></span>
+                                    <span class="matchFull__broadcasts">
+                            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/150x150/dazn-671b98d475358.png"
+            
+                                        alt="Logo DAZN"
+        class="matchFull__broadcastImage"        width="40"        height="40"    />
+
+
+                                            </span>
+                                    </span>
+    </a>
+
+            <a class="matchOddsInline matchOddsInline--parionssport" href="https://ad.doubleclick.net/ddm/trackclk/N30402.276174FOOTMERCATO/B33074373.411688651;dc_trk_aid=604035030;dc_trk_cid=228052097;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ltd=;dc_tdv=1" target="_blank" rel="sponsored" data-track-click="bet_link" data-track-label="parionssport" >
+    <div class="matchOddsInline__imageContainer">
+            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2018'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/bookmaker/parionssport.png"
+            
+                                        alt="parionssport"
+        class="matchOddsInline__image"        width="18"        height="18"    />
+
+    </div>
+
+    <span class="matchOddsInline__values">
+        <span class="matchOddsInline__value">
+            <span>1</span> <strong>1.95</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>N</span> <strong>3.20</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>2</span> <strong>3.55</strong>
+        </span>
+    </span>
+
+    <span class="matchOddsInline__buttonContainer">
+        <span class="matchOddsInline__button">15€ offerts</span>
+    </span>
+</a>
+
+    </div>
+
+            </div>
+                    <div class="blockVertical__content ">
+                
+<div class="matchFull" data-live-id="1488570645762312313" data-live-value="fixture000" data-live="0">
+    <a href="/live/1488570645762312313-le-havre-vs-nantes" class="matchFull__link">
+                    <span class="matchFull__teams">
+
+                <span class="matchFull__team">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/club/le-havre.png"
+            
+                                        alt="Logo Le Havre"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Le Havre</span></span>
+</span>
+
+                
+                <span class="matchFull__team matchFull__team--away">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/club/nantes.png"
+            
+                                        alt="Logo Nantes"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Nantes</span></span>
+</span>
+
+                
+            </span>
+                <span class="matchFull__infos">
+                            <span class="matchFull__dateTimeChrono"><span class="matchFull__infosDate">
+                            <time datetime="2025-03-30T15:15:00+00:00">
+                                17:15
+                            </time>
+                        </span></span>
+                                    <span class="matchFull__broadcasts">
+                            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/150x150/dazn-671b98d475358.png"
+            
+                                        alt="Logo DAZN"
+        class="matchFull__broadcastImage"        width="40"        height="40"    />
+
+
+                                            </span>
+                                    </span>
+    </a>
+
+            <a class="matchOddsInline matchOddsInline--parionssport" href="https://ad.doubleclick.net/ddm/trackclk/N30402.276174FOOTMERCATO/B33074373.411688651;dc_trk_aid=604035030;dc_trk_cid=228052097;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ltd=;dc_tdv=1" target="_blank" rel="sponsored" data-track-click="bet_link" data-track-label="parionssport" >
+    <div class="matchOddsInline__imageContainer">
+            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2018'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/bookmaker/parionssport.png"
+            
+                                        alt="parionssport"
+        class="matchOddsInline__image"        width="18"        height="18"    />
+
+    </div>
+
+    <span class="matchOddsInline__values">
+        <span class="matchOddsInline__value">
+            <span>1</span> <strong>2.60</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>N</span> <strong>3.10</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>2</span> <strong>2.45</strong>
+        </span>
+    </span>
+
+    <span class="matchOddsInline__buttonContainer">
+        <span class="matchOddsInline__button">15€ offerts</span>
+    </span>
+</a>
+
+    </div>
+
+            </div>
+                    <div class="blockVertical__content ">
+                
+<div class="matchFull" data-live-id="3563860465095116154" data-live-value="fixture000" data-live="0">
+    <a href="/live/3563860465095116154-auxerre-vs-montpellier" class="matchFull__link">
+                    <span class="matchFull__teams">
+
+                <span class="matchFull__team">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/club/aj-auxerre.png"
+            
+                                        alt="Logo AJ Auxerre"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Auxerre</span></span>
+</span>
+
+                
+                <span class="matchFull__team matchFull__team--away">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/club/montpellier.png"
+            
+                                        alt="Logo Montpellier"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Montpellier</span></span>
+</span>
+
+                
+            </span>
+                <span class="matchFull__infos">
+                            <span class="matchFull__dateTimeChrono"><span class="matchFull__infosDate">
+                            <time datetime="2025-03-30T15:15:00+00:00">
+                                17:15
+                            </time>
+                        </span></span>
+                                    <span class="matchFull__broadcasts">
+                            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/150x150/dazn-671b98d475358.png"
+            
+                                        alt="Logo DAZN"
+        class="matchFull__broadcastImage"        width="40"        height="40"    />
+
+
+                                            </span>
+                                    </span>
+    </a>
+
+            <a class="matchOddsInline matchOddsInline--parionssport" href="https://ad.doubleclick.net/ddm/trackclk/N30402.276174FOOTMERCATO/B33074373.411688651;dc_trk_aid=604035030;dc_trk_cid=228052097;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ltd=;dc_tdv=1" target="_blank" rel="sponsored" data-track-click="bet_link" data-track-label="parionssport" >
+    <div class="matchOddsInline__imageContainer">
+            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2018'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/bookmaker/parionssport.png"
+            
+                                        alt="parionssport"
+        class="matchOddsInline__image"        width="18"        height="18"    />
+
+    </div>
+
+    <span class="matchOddsInline__values">
+        <span class="matchOddsInline__value">
+            <span>1</span> <strong>1.72</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>N</span> <strong>3.65</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>2</span> <strong>3.95</strong>
+        </span>
+    </span>
+
+    <span class="matchOddsInline__buttonContainer">
+        <span class="matchOddsInline__button">15€ offerts</span>
+    </span>
+</a>
+
+    </div>
+
+            </div>
+                    <div class="blockVertical__content ">
+                
+<div class="matchFull" data-live-id="6037244016982586012" data-live-value="fixture000" data-live="0">
+    <a href="/live/6037244016982586012-angers-vs-rennes" class="matchFull__link">
+                    <span class="matchFull__teams">
+
+                <span class="matchFull__team">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/angers-sco.png"
+            
+                                        alt="Logo Angers"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Angers</span></span>
+</span>
+
+                
+                <span class="matchFull__team matchFull__team--away">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/club/stade-rennais-fc.png"
+            
+                                        alt="Logo Stade Rennais FC"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Rennes</span></span>
+</span>
+
+                
+            </span>
+                <span class="matchFull__infos">
+                            <span class="matchFull__dateTimeChrono"><span class="matchFull__infosDate">
+                            <time datetime="2025-03-30T15:15:00+00:00">
+                                17:15
+                            </time>
+                        </span></span>
+                                    <span class="matchFull__broadcasts">
+                            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/150x150/dazn-671b98d475358.png"
+            
+                                        alt="Logo DAZN"
+        class="matchFull__broadcastImage"        width="40"        height="40"    />
+
+
+                                            </span>
+                                    </span>
+    </a>
+
+            <a class="matchOddsInline matchOddsInline--parionssport" href="https://ad.doubleclick.net/ddm/trackclk/N30402.276174FOOTMERCATO/B33074373.411688651;dc_trk_aid=604035030;dc_trk_cid=228052097;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ltd=;dc_tdv=1" target="_blank" rel="sponsored" data-track-click="bet_link" data-track-label="parionssport" >
+    <div class="matchOddsInline__imageContainer">
+            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2018'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/bookmaker/parionssport.png"
+            
+                                        alt="parionssport"
+        class="matchOddsInline__image"        width="18"        height="18"    />
+
+    </div>
+
+    <span class="matchOddsInline__values">
+        <span class="matchOddsInline__value">
+            <span>1</span> <strong>3.70</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>N</span> <strong>3.30</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>2</span> <strong>1.87</strong>
+        </span>
+    </span>
+
+    <span class="matchOddsInline__buttonContainer">
+        <span class="matchOddsInline__button">15€ offerts</span>
+    </span>
+</a>
+
+    </div>
+
+            </div>
+                    <div class="blockVertical__content ">
+                
+<div class="matchFull" data-live-id="1737497539892414504" data-live-value="fixture000" data-live="0">
+    <a href="/live/1737497539892414504-lille-vs-lens" class="matchFull__link">
+                    <span class="matchFull__teams">
+
+                <span class="matchFull__team">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/club/lille.png"
+            
+                                        alt="Logo Lille"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Lille</span></span>
+</span>
+
+                
+                <span class="matchFull__team matchFull__team--away">
+                    <span class="matchTeam ">
+        <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/60x60/club/lens.png"
+            
+                                        alt="Logo Lens"
+        class="matchTeam__logo"        width="16"        height="16"    />
+
+
+    <span class="matchTeam__name">Lens</span></span>
+</span>
+
+                
+            </span>
+                <span class="matchFull__infos">
+                            <span class="matchFull__dateTimeChrono"><span class="matchFull__infosDate">
+                            <time datetime="2025-03-30T18:45:00+00:00">
+                                20:45
+                            </time>
+                        </span></span>
+                                    <span class="matchFull__broadcasts">
+                            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/media/cache/150x150/dazn-671b98d475358.png"
+            
+                                        alt="Logo DAZN"
+        class="matchFull__broadcastImage"        width="40"        height="40"    />
+
+
+                                            </span>
+                                    </span>
+    </a>
+
+            <a class="matchOddsInline matchOddsInline--parionssport" href="https://ad.doubleclick.net/ddm/trackclk/N30402.276174FOOTMERCATO/B33074373.411688651;dc_trk_aid=604035030;dc_trk_cid=228052097;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ltd=;dc_tdv=1" target="_blank" rel="sponsored" data-track-click="bet_link" data-track-label="parionssport" >
+    <div class="matchOddsInline__imageContainer">
+            <img
+                    src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2018'%3E%3C/svg%3E"
+            data-src="https://assets-fr.imgfoot.com/bookmaker/parionssport.png"
+            
+                                        alt="parionssport"
+        class="matchOddsInline__image"        width="18"        height="18"    />
+
+    </div>
+
+    <span class="matchOddsInline__values">
+        <span class="matchOddsInline__value">
+            <span>1</span> <strong>1.90</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>N</span> <strong>3.30</strong>
+        </span>
+        <span class="matchOddsInline__value">
+            <span>2</span> <strong>3.55</strong>
+        </span>
+    </span>
+
+    <span class="matchOddsInline__buttonContainer">
+        <span class="matchOddsInline__button">15€ offerts</span>
+    </span>
+</a>
+
+    </div>
+
+            </div>
+            </div>
+</div>
+
+                <div id="/45503615/mweb_footmercato/mtf_data"
+             class="gtag gtag--m gtag--mtf_data "
+             data-sizes='[[300, 250], [320, 50], [320, 100], &quot;fluid&quot;]'
+             data-context="mweb"
+             data-code="mtf_data"
+             data-path="/45503615/mweb_footmercato/mtf_data"
+             data-appnexus-id="19062947"
+             data-teads-id="157799"
+             data-rubicon-id="258368"
+             data-ix-id="559152"
+                             data-smart-id="91498"
+             data-mediasquare-id="footmercato.net_rg_mtf_pave_desktop"
+             data-nexx360-id="ysavzkmu"
+             data-seedtag-id="34290316"
+                
+        ></div>
+    
+
+
+                </div>
+            
+            
+                            <div class="group__side">
+                        
+<div class="blockSingle flashArticles" >
+    <div class="blockSingle__container">
+        
+        <div class="blockSingle__content ">
+            <div class="tabs tabs--menu  " data-tabs >
+    <nav class="tabs__links" data-tabsLinks>
+        <ul>
+                            <li>
+                    <a href="#tabFlash" class="active "
+                       data-tabsLink  data-api="https://www.footmercato.net/side-articles/flash?filters%5BfootdataCompetitionIds%5D%5B0%5D=8879186764835452557" >
+                                                    Flash
+                        
+                                            </a>
+                                    </li>
+                            <li>
+                    <a href="#tabMostRead" class=" "
+                       data-tabsLink  data-api="https://www.footmercato.net/side-articles/most-read?filters%5BfootdataCompetitionIds%5D%5B0%5D=8879186764835452557" >
+                                                    Les + lus
+                        
+                                            </a>
+                                    </li>
+                            <li>
+                    <a href="#tabMostCommented" class=" "
+                       data-tabsLink  data-api="https://www.footmercato.net/side-articles/most-commented?filters%5BfootdataCompetitionIds%5D%5B0%5D=8879186764835452557" >
+                                                    Les + commentés
+                        
+                                            </a>
+                                    </li>
+                        <span class="tabs__indicator" data-tabsIndicator></span>
+        </ul>
+    </nav>
+    <div class="tabs__subMenuSlot" data-tabsSubMenuSlot></div>
+            <div class="tabs__contents" data-tabsContents>
+                            <div id="tabFlash" class="tabs__tab active"  data-tabsContent >
+                        <div id="flashArticlesWrapper" class="wrapper sideArticles" >
+                <article class="articleCompact ">
+    <a class="articleCompact__link " href="https://www.footmercato.net/a9210659987186440833-psg-jerome-rothen-annonce-le-depart-du-parc-des-princes">
+        <span class="articleCompact__date">10:25</span>
+                <h3 class="articleCompact__title">PSG : Jérôme Rothen annonce le départ du Parc des Princes</h3>
+    </a>
+</article>
+
+    <article class="articleCompact ">
+    <a class="articleCompact__link " href="https://www.footmercato.net/a5675562855278919694-jean-michel-aulas-avertit-le-psg-sur-la-construction-de-son-nouveau-stade">
+        <span class="articleCompact__date">21/03</span>
+                <h3 class="articleCompact__title">Jean-Michel Aulas avertit le PSG sur la construction de son nouveau stade</h3>
+    </a>
+</article>
+
+    <article class="articleCompact ">
+    <a class="articleCompact__link " href="https://www.footmercato.net/a378249577044350431-ol-un-depart-difficile-a-avaler-pour-maxence-caqueret">
+        <span class="articleCompact__date">20/03</span>
+                <h3 class="articleCompact__title">OL : un départ difficile à avaler pour Maxence Caqueret</h3>
+    </a>
+</article>
+
+    <article class="articleCompact ">
+    <a class="articleCompact__link " href="https://www.footmercato.net/a4191237865949269194-le-president-de-la-commission-federale-de-larbitrage-sinsurge-de-la-banderole-contre-adrien-rabiot">
+        <span class="articleCompact__date">20/03</span>
+                <h3 class="articleCompact__title">Le président de la Commission fédérale de l’arbitrage s’insurge de la banderole contre Adrien Rabiot</h3>
+    </a>
+</article>
+
+    <article class="articleCompact ">
+    <a class="articleCompact__link " href="https://www.footmercato.net/a2518142455446235723-om-mason-greenwood-a-repris-lentrainement-deux-jours-avant-ses-partenaires">
+        <span class="articleCompact__date">20/03</span>
+                <h3 class="articleCompact__title">OM : Mason Greenwood a repris l’entraînement deux jours avant ses partenaires</h3>
+    </a>
+</article>
+
+    <article class="articleCompact ">
+    <a class="articleCompact__link " href="https://www.footmercato.net/a911624917933587056-la-ligue-1-nemballe-pas-du-tout-les-diffuseurs-espagnols">
+        <span class="articleCompact__date">20/03</span>
+                <h3 class="articleCompact__title">La Ligue 1 n’emballe pas du tout les diffuseurs espagnols</h3>
+    </a>
+</article>
+
+    <article class="articleCompact ">
+    <a class="articleCompact__link " href="https://www.footmercato.net/a1066720776712029494-luis-fernandez-a-failli-devenir-lentraineur-de-lol-sous-textor">
+        <span class="articleCompact__date">20/03</span>
+                <h3 class="articleCompact__title">Luis Fernandez a failli devenir l’entraîneur de l’OL sous Textor</h3>
+    </a>
+</article>
+
+    <article class="articleCompact ">
+    <a class="articleCompact__link articleCompact__link--isHighlighted" href="https://www.footmercato.net/a4866958100716483163-om-premier-contrat-professionnel-pour-tadjidine-mmadi">
+        <span class="articleCompact__date">20/03</span>
+                    <span class="articleCompact__specificity">
+                <span class="tags ">Officiel</span>
+
+            </span>
+                <h3 class="articleCompact__title">OM : premier contrat professionnel pour Tadjidine Mmadi </h3>
+    </a>
+</article>
+
+    <article class="articleCompact ">
+    <a class="articleCompact__link " href="https://www.footmercato.net/a3666454776188517227-psg-le-message-de-booba-a-dembele-al-khelaifi-co">
+        <span class="articleCompact__date">20/03</span>
+                <h3 class="articleCompact__title">PSG : le message de Booba à Dembélé, Al-Khelaïfi &amp; co</h3>
+    </a>
+</article>
+
+    <article class="articleCompact ">
+    <a class="articleCompact__link " href="https://www.footmercato.net/a3740414452234567654-lol-va-saisir-le-cnosf-pour-paulo-fonseca">
+        <span class="articleCompact__date">20/03</span>
+                <h3 class="articleCompact__title">L’OL va saisir le CNOSF pour Paulo Fonseca</h3>
+    </a>
+</article>
+
+
+    </div>
+
+        <div class="buttonLinks buttonLinks--side">
+                <ul class="buttonLinks__list">
+                            <li class="buttonLinks__item">
+                    
+<a href=https://www.footmercato.net/actualite-a-la-une class="button button--tertiary button--small   "   >
+    <span class="button__textWrapper">Voir tous</span>
+</a>
+
+
+                </li>
+                            <li class="buttonLinks__item">
+                    
+<a href=# class="button button--tertiary button--small   "   data-side-pagination-previous=1 aria-label=↑>
+    <span class="button__iconWrapper">
+            
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 6a.752.752 0 0 0-.75.75v15c0 .413.338.75.75.75s.75-.337.75-.75v-15A.752.752 0 0 0 12 6Z" />
+    <path d="M20.782 9.345 13.59 2.16c-.848-.848-2.333-.848-3.18 0L3.217 9.345a.747.747 0 1 0 1.058 1.057l7.192-7.184a.76.76 0 0 1 1.058 0l7.192 7.192c.15.15.338.217.533.217a.747.747 0 0 0 .532-1.275v-.007Z" />
+</svg>
+
+
+        </span>
+</a>
+
+
+                </li>
+                            <li class="buttonLinks__item">
+                    
+<a href=# class="button button--tertiary button--small   "   data-side-pagination-next=https://www.footmercato.net/side-articles/flash?filters%5BfootdataCompetitionIds%5D%5B0%5D=8879186764835452557 aria-label=↓>
+    <span class="button__iconWrapper">
+            
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 18c.412 0 .75-.337.75-.75v-15A.752.752 0 0 0 12 1.5a.752.752 0 0 0-.75.75v15c0 .413.338.75.75.75Z" />
+    <path d="M20.783 13.59a.747.747 0 0 0-1.058 0l-7.192 7.192a.76.76 0 0 1-1.058 0L4.283 13.59a.747.747 0 1 0-1.058 1.058l7.193 7.192c.427.427.99.66 1.59.66.6 0 1.162-.233 1.59-.66l7.192-7.192a.747.747 0 0 0 0-1.058h-.007Z" />
+</svg>
+
+
+        </span>
+</a>
+
+
+                </li>
+                    </ul>
+    </div>
+
+
+                </div>
+                            <div id="tabMostRead" class="tabs__tab "  data-tabsContent >
+                    
+                </div>
+                            <div id="tabMostCommented" class="tabs__tab "  data-tabsContent >
+                    
+                </div>
+                        <span class="tabs__loader" data-tabsLoader>
+                
+<svg class="starAnimated" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" width="64" height="64" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+        <![CDATA[
+            #eHtr1IfNndV3 {animation: eHtr1IfNndV3_s_do 3500ms linear infinite normal forwards}@keyframes eHtr1IfNndV3_s_do { 0% {stroke-dashoffset: 244.174465;animation-timing-function: cubic-bezier(0.68,-0.55,0.265,1.55)} 50% {stroke-dashoffset: 0} 100% {stroke-dashoffset: 0}}
+            #eHtr1IfNndV4 {animation: eHtr1IfNndV4_s_do 3500ms linear infinite normal forwards}@keyframes eHtr1IfNndV4_s_do { 0% {stroke-dashoffset: 244.174465} 50% {stroke-dashoffset: 244.174465;animation-timing-function: cubic-bezier(0.68,-0.55,0.265,1.55)} 100% {stroke-dashoffset: 0}}]]>
+    </style>
+    <path d="M32,1.6L24.5,24.8h-24.5L19.8,39.1L12.2,62.3L32,48L51.8,62.3L44.3,39.1L64,24.8h-24.5L32,1.6v0Z" transform="matrix(0.830678 0 0 0.830678 5.418304 5.459838)" fill="none" stroke="currentColor" stroke-width="4" class="starAnimated__backgroundLine" />
+    <path id="eHtr1IfNndV3" d="M13.450226,24.800002L0,24.8L19.8,39.1L12.2,62.3L32,48L51.8,62.3L44.3,39.1L64,24.8h-24.5L31.999998,1.599996c0,0-5.249999,16.240003-7.499998,23.200004h-11.74801" transform="matrix(0.830678 0 0 0.830678 5.418304 5.459838)" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" stroke-dashoffset="244.174465" stroke-dasharray="244.174465" class="starAnimated__animatedLine" />
+    <path id="eHtr1IfNndV4" d="M13.450226,24.800002L0,24.8L19.8,39.1L12.2,62.3L32,48L51.8,62.3L44.3,39.1L64,24.8h-24.5L31.999998,1.599996c0,0-5.249999,16.240003-7.499998,23.200004l-9.669776.000002" transform="matrix(0.830678 0 0 0.830678 5.418304 5.459838)" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" stroke-dashoffset="244.174465" stroke-dasharray="244.174465" class="starAnimated__frontLine" />
+</svg>
+
+
+            </span>
+        </div>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+                <div class="adWrapper adWrapper--d">
+            <span>La suite après cette publicité</span>
+            <div id="/45503615/desk_footmercato/mtf_data_1"
+             class="gtag gtag--d  "
+             data-sizes='[[300, 250], [300, 600]]'
+             data-context="desk"
+             data-code="mtf_data_1"
+             data-path="/45503615/desk_footmercato/mtf_data_1"
+             data-appnexus-id=""
+             data-teads-id=""
+             data-rubicon-id=""
+             data-ix-id=""
+                             data-smart-id=""
+             data-mediasquare-id=""
+             data-nexx360-id=""
+             data-seedtag-id=""
+                
+        ></div>
+            </div>
+    
+
+
+                </div>
+                        </div>
+
+
+        <div id="modalStats" class="modal  " >
+    <div class="modal__wrapper">
+        <div class="modal__titleContainer">
+            
+            <div class="modal__title"></div>
+
+            <button aria-label="Fermer" class="modal__close">
+                
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M13.86 12.795a.747.747 0 1 0-1.058 1.057l6.923 6.923c.15.15.337.218.532.218a.747.747 0 0 0 .532-1.275l-6.922-6.923h-.007ZM4.283 3.217a.747.747 0 1 0-1.058 1.058l6.923 6.922c.15.15.337.218.532.218a.747.747 0 0 0 .533-1.275l-6.93-6.923ZM10.14 12.795l-6.923 6.923a.747.747 0 0 0 .533 1.274.768.768 0 0 0 .532-.217l6.923-6.922a.747.747 0 1 0-1.058-1.058h-.007ZM13.327 11.422a.768.768 0 0 0 .533-.217l6.922-6.923a.747.747 0 1 0-1.057-1.057l-6.923 6.923a.747.747 0 0 0 .533 1.274h-.008Z"/>
+</svg>
+
+
+            </button>
+        </div>
+
+        <div class="modal__content">        <div class="wrapper">
+            <div id="refereeStandings"></div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+                                                                        <div class="seoText">
+                                <div class="seoText__container">
+                                    <p>Ne manquez plus aucun match de Ligue 1 de la saison avec les dernières informations sur la première division du championnat de football Français. Suivez en temps réel les derniers résultats et le programme des prochains matchs de L1. </p>
+<h3>Le programme des matchs de Ligue 1 pour toute la saison</h3>
+<p>La ligue 1 est la compétition majeure de football en France et se déroule sur une saison complète de 34 journées du mois d'août au mois de mai. Dix-huit équipes sont engagées dans la lutte au titre de champion dont le Paris Saint-Germain, l'Olympique de Marseille, l'AS Monaco, le Lille OSC, le RC Lens ou encore l'Olympique Lyonnais. La saison se décompose en deux phases: tout d'abord les matchs allers puis les matchs retour en deuxième partie de saison. Plusieurs trêves internationales mettent en pause la L1 afin de permettre au bon déroulé des rencontres des équipes nationales. </p>
+<h3>Les derniers résultats de L1 en vidéo</h3>
+<p>En navigant par journée de championnat, vous trouverez les résultats des derniers matchs du championnat de France. Les score sont mis à jour en temps réel et un résumé vidéo sera publié dans les heures suivant le coup de sifflet final. </p>
+                                </div>
+                            </div>
+                                                            </div>
+            
+                            <footer class="footer">
+    <div class="footer__mainWrapper">
+        <div class="footer__main">
+            <div class="footer__top">
+                <div class="footer__topLogo">
+                    <a href="https://www.footmercato.net/" class="logo" aria-label="Foot Mercato : Info Transferts Football - Actu Foot Transfert">
+    
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 386 40" width="184" height="19">
+      <title></title>
+      <path fill="currentColor" fill-rule="evenodd" d="M33.93 6.07H10.35L8.38 0 6.4 6.07h-.64v.02H0l5.18 3.76-1.98 6.08 5.18-3.76 5.17 3.76-1.98-6.08 1.83-1.33h17.95v5.91H15.5v7h13.86l.01 5.35H15.5v10H7.68l.03-17.89-2.49 1.83-.04 18.51h12.74l.01-10h13.95l-.02-10.24H18.28v-2.12h15.64l.01-10.8ZM166.76 25.5l-2.77 6.53-2.87-6.55-9.37-18.9h-7.54v32.94h5.78V19.36l-.17-4.1 1.78 4.24 8.99 18.09h6.61l8.99-18.1 1.78-4.23-.17 4.12v20.14h5.77V6.58h-7.54l-9.27 18.92Zm47.42 14.02h-26.37V6.58h26.37v5.26h-20.6v8.5h19.88v5.22h-19.88v8.7h20.6v5.26Zm23.42-13.91c5.86-.55 9.21-3.88 9.21-9.23 0-6.14-4.54-9.8-12.13-9.8h-17v32.94h5.77V27h5.63c4 0 5.4 1.12 6.73 3.48l5.19 9.04h6.63l-5.63-9.8c-1.15-2.03-2.27-3.38-4.4-4.11Zm3.24-8.51c0 3.75-1.8 5.27-6.21 5.27h-11.21V11.84h11.21c4.37 0 6.21 1.57 6.21 5.26Zm12.88-6.38C256.75 7.69 261 6.09 266 6.09c9.37 0 15.69 5.17 15.68 12.85v1h-6.3v-1c0-4.84-3.16-7.3-9.38-7.3-7.45 0-10.88 3.67-10.88 11.41s3.47 11.35 10.93 11.35c6.31 0 9.38-2.39 9.38-7.3v-.91h6.3v.91a11.7 11.7 0 0 1-4.4 9.45C274.52 38.81 270.6 40 266 40c-5 0-9.29-1.59-12.34-4.63-3.05-3.04-4.66-7.27-4.66-12.32 0-5.05 1.69-9.3 4.72-12.33Zm51.02-4.14h-7.69l-14.64 32.94h6.4l3.71-8.41h16.66l3.7 8.41h6.5L304.81 6.75l-.07-.17ZM300.85 12l1.8 4.42 4.2 9.45h-12l4.2-9.46 1.8-4.41Zm31.08-.16h-12.7V6.58h31.08v5.26h-12.65v27.68h-5.73V11.84Zm36.96-5.75c-5 0-9.33 1.6-12.39 4.63-3.06 3.03-4.69 7.3-4.69 12.33s1.62 9.28 4.69 12.32c3.07 3.04 7.35 4.63 12.39 4.63C379.3 40 386 33.35 386 23.05c0-10.3-6.7-16.96-17.11-16.96Zm11.07 17c0 7.74-3.52 11.35-11.07 11.35-7.55 0-11-3.5-11-11.35s3.5-11.41 11-11.41S380 15.27 380 23.05l-.04.04Zm-343.31-.36c0 10.18 6.74 17 16.74 17 10.04 0 16.78-6.82 16.78-17s-6.77-17-16.78-17c-10.01 0-16.74 6.82-16.74 17Zm2.66.04c0-8.69 5.53-14.3 14.08-14.3a14.05 14.05 0 0 1 10.29 3.86c2.51 2.53 3.83 6.14 3.83 10.44s-1.32 7.9-3.83 10.44a14.09 14.09 0 0 1-10.29 3.86c-8.55 0-14.08-5.61-14.08-14.3Zm6.27-.01c0 5.32 2.7 8.14 7.81 8.14h.01c5.13 0 7.83-2.8 7.83-8.14 0-5.34-2.71-8.16-7.84-8.16-6.46 0-7.81 4.44-7.81 8.16Zm2.74 0c0-3.98 1.37-5.45 5.07-5.45h.01c3.67 0 5.09 1.49 5.09 5.45s-1.4 5.43-5.1 5.43c-3.7 0-5.07-1.45-5.07-5.43ZM90 39.73c-10 0-16.74-6.82-16.74-17S80 5.81 90 5.81c10 0 16.78 6.82 16.78 17S100 39.73 90 39.73Zm0-31.26c-8.55 0-14.08 5.61-14.08 14.3 0 8.69 5.53 14.3 14.08 14.3a14.09 14.09 0 0 0 10.29-3.86 14.49 14.49 0 0 0 3.83-10.44 14.45 14.45 0 0 0-3.83-10.44A14.05 14.05 0 0 0 90 8.47Zm0 22.43c-5.11 0-7.82-2.82-7.82-8.14 0-3.72 1.36-8.16 7.82-8.16 5.12 0 7.83 2.82 7.83 8.16S95.13 30.9 90 30.9Zm0-13.59c-3.69 0-5.07 1.47-5.07 5.45 0 3.98 1.38 5.43 5.07 5.43 3.69 0 5.1-1.47 5.1-5.43s-1.43-5.45-5.1-5.45Zm29.78 22.22h10.83V17.1h10.1v-11h-31.07v11h10.14v22.43Zm7.9-2.88h-5.07l.05-22.37h-10.14V9h25.26v5.23h-10.1v22.42Z" clip-rule="evenodd"/>
+</svg>
+
+
+</a>
+
+                </div>
+
+                                    <ul class="footer__iconList">
+                                                    <li class="footer__iconEntry">
+                                <a class="footer__iconLink" href="https://play.google.com/store/apps/details?id=net.footmercato.mobile" title="Android" data-footer-app-download-button>
+                                    
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M2 2v19.62l19.62-9.81L2 2Zm8.79 9.81L3 19.6V4.02l7.79 7.79ZM5.03 4.63l8.62 4.31-2.16 2.16-6.46-6.47Zm6.47 7.88 2.16 2.16-8.62 4.31 6.47-6.47h-.01Zm.71-.71 2.39-2.39 4.78 2.39-4.78 2.39-2.39-2.39Z"/>
+</svg>
+
+
+                                </a>
+                            </li>
+                                                    <li class="footer__iconEntry">
+                                <a class="footer__iconLink" href="https://apps.apple.com/fr/app/foot-mercato-transferts/id537919329?mt=8" title="Ios" data-footer-app-download-button>
+                                    
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" viewBox="0 0 24 24"><path d="M15.5 3.33a3.56 3.56 0 0 1-.75 1.28 3.88 3.88 0 0 1-1.16.9 3.631 3.631 0 0 1 1.91-2.18Zm.79 4.4h.14a4.18 4.18 0 0 1 2.38.86A5.26 5.26 0 0 0 17.09 13a5.52 5.52 0 0 0 2.51 4.18A10.23 10.23 0 0 1 17.88 20l-.53.52a1.55 1.55 0 0 1-1.13.49 3 3 0 0 1-1.21-.31 5.741 5.741 0 0 0-2.19-.46 5.591 5.591 0 0 0-2.2.47 3.32 3.32 0 0 1-1.19.29 1.54 1.54 0 0 1-1.08-.52c-3.37-3.48-3.87-7.6-2.92-10a4 4 0 0 1 3.73-2.69 6.23 6.23 0 0 1 1.83.47 5.63 5.63 0 0 0 1.52.41h.27a11.84 11.84 0 0 0 1.53-.45 6.31 6.31 0 0 1 2-.47l-.02-.02ZM16.62 2a4.56 4.56 0 0 0-4.19 4.72c.096.01.193.01.29 0A4.51 4.51 0 0 0 16.62 2Zm-.33 4.73c-1.3 0-2.48.69-3.71.94-.88-.06-1.93-.81-3.42-.89-6.17.32-7 8.83-1.54 14.41a2.508 2.508 0 0 0 1.81.81 4.21 4.21 0 0 0 1.63-.41 4.35 4.35 0 0 1 3.6 0 4.07 4.07 0 0 0 1.6.38 2.512 2.512 0 0 0 1.82-.78 11.16 11.16 0 0 0 2.82-4.54 4.4 4.4 0 0 1-.53-7.93 4.85 4.85 0 0 0-3.79-2l-.29.01Z"/></svg>
+
+
+                                </a>
+                            </li>
+                                            </ul>
+                
+                                    <ul class="footer__iconList">
+                                                    <li class="footer__iconEntry">
+                                <a class="footer__iconLink" href="https://www.facebook.com/footmercato" title="Facebook">
+                                    
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" viewBox="0 0 24 24"><path d="M13 22v-7.75h2.29l.27-1.75H13v-2.28a1.879 1.879 0 0 1 2-2h.7V6.83a13.531 13.531 0 0 0-1.63-.12A2.86 2.86 0 0 0 11 9.91v2.59H8.6v1.75H11V22l-.58-.09a10 10 0 1 1 3.12 0L13 22ZM12 3a9 9 0 0 0-2 17.77v-5.52H7.6V11.5H10V9.91a3.84 3.84 0 0 1 4.08-4.2 15.1 15.1 0 0 1 2.22.19l.41.07v3.26H15c-.71 0-1 .32-1 1v1.27h2.7l-.57 3.75H14v5.52A9 9 0 0 0 12 3Z"/></svg>
+
+
+                                </a>
+                            </li>
+                                                    <li class="footer__iconEntry">
+                                <a class="footer__iconLink" href="https://x.com/footmercato" title="Twitter">
+                                    
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" viewBox="0 0 24 24"><path d="m14.32 10.89 6.9-7.92h-3.06l-5.27 6.04-4.57-6.04H2l7.68 10.14-6.9 7.92h3.06l5.27-6.04 4.57 6.04H22l-7.68-10.14Zm-2.55 3.33-1.04-1.38-6.72-8.87h3.82l4.4 5.81 1.04 1.38 6.72 8.87h-3.82l-4.4-5.81Z"/></svg>
+
+
+                                </a>
+                            </li>
+                                                    <li class="footer__iconEntry">
+                                <a class="footer__iconLink" href="https://www.instagram.com/footmercato/" title="Instagram">
+                                    
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M20 8.7a5.85 5.85 0 0 0-.37-1.94 4 4 0 0 0-2.34-2.34 5.85 5.85 0 0 0-1.94-.37h-6.6a5.85 5.85 0 0 0-1.94.37 4 4 0 0 0-2.39 2.34 5.85 5.85 0 0 0-.37 1.94C4 9.55 4 9.83 4 12v3.3a5.85 5.85 0 0 0 .37 1.94 4 4 0 0 0 2.34 2.34A5.85 5.85 0 0 0 8.7 20c.327 0 .57.007.869.017A69.41 69.41 0 0 0 12 20.05c2.17 0 2.45 0 3.3-.05a5.85 5.85 0 0 0 1.94-.37 4.142 4.142 0 0 0 2.34-2.34A5.85 5.85 0 0 0 20 15.3c0-.327.007-.57.017-.869.014-.477.033-1.096.033-2.431s-.019-1.954-.034-2.431c-.009-.3-.016-.542-.016-.869Zm-1 6.55a5 5 0 0 1-.3 1.63 3.14 3.14 0 0 1-1.77 1.77 5 5 0 0 1-1.63.3c-.319 0-.556.007-.849.016-.47.015-1.082.034-2.401.034h-3.3a4.81 4.81 0 0 1-1.64-.31A2.84 2.84 0 0 1 6 17.94a2.91 2.91 0 0 1-.69-1.06 5 5 0 0 1-.3-1.63v-6.5a4.81 4.81 0 0 1 .31-1.64A2.84 2.84 0 0 1 6.06 6a2.91 2.91 0 0 1 1.06-.69 5 5 0 0 1 1.63-.3C9.58 5 9.86 5 12 5h3.25a4.81 4.81 0 0 1 1.64.31 2.84 2.84 0 0 1 1.07.7c.305.298.54.66.69 1.06A5 5 0 0 1 19 8.75v6.5Zm-2.73-8.48a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM9.717 8.583a4.11 4.11 0 1 1 4.567 6.834 4.11 4.11 0 0 1-4.567-6.834Zm.555 6.003A3.11 3.11 0 0 0 12 15.11 3.12 3.12 0 0 0 15.11 12a3.11 3.11 0 1 0-4.838 2.586Z" clip-rule="evenodd"/></svg>
+
+
+                                </a>
+                            </li>
+                                                    <li class="footer__iconEntry">
+                                <a class="footer__iconLink" href="https://www.youtube.com/c/mercato" title="Youtube">
+                                    
+<svg xmlns="http://www.w3.org/2000/svg"  width="27" height="27" fill="currentColor" viewBox="0 0 24 24"><path  fill-rule="evenodd" d="M20.91 6.07c.31.311.534.697.65 1.12a26.467 26.467 0 0 1 0 9.6 2.5 2.5 0 0 1-1.77 1.76 43.933 43.933 0 0 1-7.53.43 52.759 52.759 0 0 1-8.09-.43 2.481 2.481 0 0 1-1.76-1.76 27.83 27.83 0 0 1 0-9.59 2.52 2.52 0 0 1 1.76-1.78 48.48 48.48 0 0 1 7.69-.43c2.651-.075 5.303.068 7.93.43.424.116.81.34 1.12.65Zm-.711 11.117c.175-.184.3-.41.361-.657h.04a25.52 25.52 0 0 0-.01-9.19 1.5 1.5 0 0 0-1.06-1h-.1a53.34 53.34 0 0 0-7.57-.35c-2.5-.03-4.997.14-7.47.51a1.49 1.49 0 0 0-1 1 27.19 27.19 0 0 0 0 9.09 1.51 1.51 0 0 0 1.05 1 55 55 0 0 0 7.83.39 44.285 44.285 0 0 0 7.29-.4 1.47 1.47 0 0 0 .639-.393ZM16.29 11.99l-6.73 3.86V8.13l6.73 3.86Zm-2.01 0-3.72-2.14v4.27l3.72-2.13Z" clip-rule="evenodd"/></svg>
+
+
+                                </a>
+                            </li>
+                                                    <li class="footer__iconEntry">
+                                <a class="footer__iconLink" href="https://flipboard.com/@FootMercato" title="Flipboard">
+                                    
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4v16h6v-5h5v-5h5V4ZM9 19H5V5h4v14Zm5-5h-4v-4h4v4Zm5-5h-9V5h9v4Z"/></svg>
+
+
+                                </a>
+                            </li>
+                                                    <li class="footer__iconEntry">
+                                <a class="footer__iconLink" href="https://www.snapchat.com/discover/Foot_Mercato/1697664684" title="Snapchat">
+                                    
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" viewBox="0 0 24 24"><path d="M12.06 4c.82 0 1.61.21 2.36.67 1.09.66 1.71 1.63 1.84 2.91.05.47.06.94.07 1.27-.03.53-.05.91-.07 1.29 0 .17.04.26.15.26.04 0 .08 0 .13-.02.3-.1.6-.22.9-.32.14-.05.28-.09.43-.09.05 0 .09 0 .14.01.4.08.6.5.37.84-.11.17-.27.31-.44.43-.37.26-.75.51-1.12.76l-.15.12c-.16.13-.23.29-.2.5.06.39.21.74.39 1.07.55 1.02 1.36 1.76 2.33 2.34.18.11.38.2.56.31.06.03.11.06.16.1.09.08.1.17.01.25a.98.98 0 0 1-.23.17c-.35.21-.74.33-1.13.43-.14.04-.28.09-.42.14-.23.09-.34.26-.37.5 0 .04-.01.09-.02.13-.04.29-.12.38-.41.4-.29.03-.58.04-.86.05-.76.05-1.47.25-2.12.69-.42.28-.86.53-1.35.65-.36.09-.72.14-1.08.14-.69 0-1.35-.18-1.99-.55-.31-.19-.62-.39-.94-.55-.55-.28-1.16-.36-1.77-.39-.22-.01-.44-.02-.66-.04-.28-.03-.38-.12-.4-.4-.02-.41-.25-.62-.62-.72-.42-.11-.84-.22-1.23-.43-.09-.05-.18-.1-.26-.17-.15-.12-.14-.24.02-.34.11-.07.23-.12.35-.18.92-.49 1.72-1.12 2.32-1.99.27-.39.49-.8.64-1.25.01-.04.02-.08.03-.11.12-.45.07-.6-.3-.86s-.75-.49-1.11-.75c-.14-.1-.28-.22-.39-.35-.17-.2-.2-.43-.08-.67.08-.16.27-.28.47-.28.04 0 .08 0 .12.01.28.06.55.15.82.24.16.05.31.12.47.17.04.01.08.02.11.02.12 0 .16-.08.16-.25-.02-.7-.05-1.41-.03-2.11.02-.73.16-1.43.55-2.06.58-.94 1.42-1.54 2.47-1.81.45-.12.9-.18 1.34-.18h.04Zm-.04-1c-.52 0-1.05.07-1.59.21-1.32.34-2.36 1.1-3.07 2.25-.45.73-.68 1.57-.7 2.56v1.06c-.1-.03-.21-.06-.32-.08-.11-.02-.21-.03-.32-.03-.57 0-1.11.32-1.36.82-.31.61-.23 1.28.22 1.78.16.19.35.35.57.5.2.14.39.27.59.4.13.09.26.17.39.26-.1.3-.26.61-.48.92-.47.67-1.11 1.22-1.97 1.68l-.1.05c-.1.05-.2.1-.3.17-.34.23-.55.58-.58.96-.02.38.15.76.48 1.02.15.12.29.2.4.26.46.26.93.39 1.35.5.1.67.55 1.1 1.27 1.17.19.02.37.03.56.04h.16c.47.03.96.08 1.37.29.2.1.39.22.58.34l.3.18c.78.46 1.62.69 2.5.69.43 0 .87-.06 1.32-.17.54-.14 1.07-.39 1.67-.79.46-.31.99-.48 1.61-.52h.26l.64-.06c.5-.05 1.12-.3 1.29-1.18.03 0 .06-.02.09-.02.45-.12.92-.27 1.38-.54.16-.1.31-.21.43-.33.24-.24.36-.55.35-.87-.01-.32-.16-.62-.42-.85-.13-.11-.25-.18-.33-.22l-.23-.12c-.1-.06-.21-.11-.31-.17-.9-.53-1.54-1.17-1.96-1.96-.1-.18-.17-.34-.22-.48l.2-.13c.27-.18.54-.36.8-.55.29-.21.52-.43.68-.68.29-.43.35-.98.15-1.45-.2-.48-.64-.83-1.16-.93-.11-.02-.22-.03-.33-.03-.21 0-.4.04-.56.08v-.15l.01-.05v-.05l-.02-.3c-.01-.3-.03-.66-.06-1.01-.16-1.58-.96-2.85-2.32-3.67a5.48 5.48 0 0 0-2.88-.81l-.03.01Z"/></svg>
+
+
+                                </a>
+                            </li>
+                                                    <li class="footer__iconEntry">
+                                <a class="footer__iconLink" href="https://www.tiktok.com/@footmercato" title="Tiktok">
+                                    
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" viewBox="0 0 24 24"><path d="M14.81 3v.14a6 6 0 0 0 2.29 3.65 6.08 6.08 0 0 0 2.66 1.14v1.26A7.28 7.28 0 0 1 18 8.68a6.91 6.91 0 0 1-1.61-.93l-1.67-1.26v9.29a5.099 5.099 0 0 1-1.54 3.64 5.31 5.31 0 0 1-6.95.44 5.25 5.25 0 0 1-2-4.43 5.15 5.15 0 0 1 1.3-3.09 5.231 5.231 0 0 1 3.9-1.77v1.23a4 4 0 0 0-3.89 4 3.92 3.92 0 0 0 1.92 3.4 4 4 0 0 0 1.8.56h.24c.418.003.834-.065 1.23-.2a4 4 0 0 0 2.72-3.75V3h1.36Zm.91-1h-3.27v13.81a3 3 0 0 1-2 2.8 2.82 2.82 0 0 1-.92.15h-.21A3 3 0 0 1 8 18.34a3 3 0 0 1 1.52-5.49c.315.004.629.054.93.15V9.69a5.86 5.86 0 0 0-.94-.07 6.28 6.28 0 0 0-4.71 2.1 6.16 6.16 0 0 0 .28 8.47c.187.18.384.35.59.51a6.27 6.27 0 0 0 9.585-2.5 6.13 6.13 0 0 0 .484-2.36v-7.3a8 8 0 0 0 1.82 1.06 8.11 8.11 0 0 0 3.23.65V7a5.06 5.06 0 0 1-3.05-1 5 5 0 0 1-1.91-3 4.32 4.32 0 0 1-.1-1h-.01Z"/></svg>
+
+
+                                </a>
+                            </li>
+                                                    <li class="footer__iconEntry">
+                                <a class="footer__iconLink" href="https://www.twitch.tv/footmercato" title="Twitch">
+                                    
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M3.22 6.32 4.04 3H20v11l-6.17 6.17h-2.94l-1.84 1.84H6.51v-1.84H3.2l.02-13.85Zm10.2 12.84L19 13.58V4H4.82L4.2 6.5v12.66h3.31V21h1.13l1.84-1.84h2.94ZM9.45 7.91h1v4.41h-1V7.91Zm5.04 0h-1v4.41h1V7.91Zm-2.87 8.21-2.91 2.91v-2.91H5.4V4.47h13.13v8.79l-2.87 2.86h-4.04ZM6.4 5.47v9.65h3.31v1.5l1.5-1.5h4.04l2.28-2.28V5.47H6.4Z" clip-rule="evenodd"/></svg>
+
+
+                                </a>
+                            </li>
+                                            </ul>
+                            </div>
+
+                            <ul class="footer__menu">
+            <li class="footer__menuSection">
+            
+                            <ul class="footer__menuList footer__menuList--alone">
+                                            <li class="footer__menuItem">
+                                                            <span class="footer__menuTitle">Accès</span>
+                            
+                                                            <ul class="footer__menuSubList">
+                                                                            <li class="footer__menuSubItem">
+                                                                                            <a class="footer__menuItemLink" href="https://www.footmercato.net/contact-mentions-legales-flux-rss#contact">
+                                                    Contact
+                                                </a>
+                                                                                    </li>
+                                                                            <li class="footer__menuSubItem">
+                                                                                            <a class="footer__menuItemLink" href="https://www.footmercato.net/contact-mentions-legales-flux-rss#mentions">
+                                                    Mentions Légales
+                                                </a>
+                                                                                    </li>
+                                                                            <li class="footer__menuSubItem">
+                                                                                            <a class="footer__menuItemLink" href="https://www.footmercato.net/archives/">
+                                                    Archives
+                                                </a>
+                                                                                    </li>
+                                                                            <li class="footer__menuSubItem">
+                                                                                            <a class="footer__menuItemLink" href="https://www.welcometothejungle.com/fr/companies/adversport/jobs">
+                                                    Emploi
+                                                </a>
+                                                                                    </li>
+                                                                    </ul>
+                                                    </li>
+                                    </ul>
+                    </li>
+    
+</ul>
+
+                    </div>
+    </div>
+    <div class="footer__copyrightWrapper">
+        <div class="footer__copyright">
+            <p class="footer__textCopyright">@ Foot Mercato 2004-2025</p>
+            <a class="footer__mainDateUpdate" href="/actualite-a-la-une">Mis à jour à 11:13</a>
+        </div>
+    </div>
+</footer>
+
+                    
+                    <div id="menuModal" class="modalsMenuSearch modalsMenuSearch--left" data-src="/menu/main">
+    <div class="modalsMenuSearch__content"></div>
+    <div class="modalsMenuSearch__loader">
+        
+<svg class="starAnimated" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" width="64" height="64" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+        <![CDATA[
+            #eHtr1IfNndV3 {animation: eHtr1IfNndV3_s_do 3500ms linear infinite normal forwards}@keyframes eHtr1IfNndV3_s_do { 0% {stroke-dashoffset: 244.174465;animation-timing-function: cubic-bezier(0.68,-0.55,0.265,1.55)} 50% {stroke-dashoffset: 0} 100% {stroke-dashoffset: 0}}
+            #eHtr1IfNndV4 {animation: eHtr1IfNndV4_s_do 3500ms linear infinite normal forwards}@keyframes eHtr1IfNndV4_s_do { 0% {stroke-dashoffset: 244.174465} 50% {stroke-dashoffset: 244.174465;animation-timing-function: cubic-bezier(0.68,-0.55,0.265,1.55)} 100% {stroke-dashoffset: 0}}]]>
+    </style>
+    <path d="M32,1.6L24.5,24.8h-24.5L19.8,39.1L12.2,62.3L32,48L51.8,62.3L44.3,39.1L64,24.8h-24.5L32,1.6v0Z" transform="matrix(0.830678 0 0 0.830678 5.418304 5.459838)" fill="none" stroke="currentColor" stroke-width="4" class="starAnimated__backgroundLine" />
+    <path id="eHtr1IfNndV3" d="M13.450226,24.800002L0,24.8L19.8,39.1L12.2,62.3L32,48L51.8,62.3L44.3,39.1L64,24.8h-24.5L31.999998,1.599996c0,0-5.249999,16.240003-7.499998,23.200004h-11.74801" transform="matrix(0.830678 0 0 0.830678 5.418304 5.459838)" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" stroke-dashoffset="244.174465" stroke-dasharray="244.174465" class="starAnimated__animatedLine" />
+    <path id="eHtr1IfNndV4" d="M13.450226,24.800002L0,24.8L19.8,39.1L12.2,62.3L32,48L51.8,62.3L44.3,39.1L64,24.8h-24.5L31.999998,1.599996c0,0-5.249999,16.240003-7.499998,23.200004l-9.669776.000002" transform="matrix(0.830678 0 0 0.830678 5.418304 5.459838)" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" stroke-dashoffset="244.174465" stroke-dasharray="244.174465" class="starAnimated__frontLine" />
+</svg>
+
+
+    </div>
+</div>
+
+<div id="searchModal" class="modalsMenuSearch"
+    data-src="/recherche/index?dataType=all"
+    data-srccompetitions="/recherche/index?dataType=competitions"
+    data-srcteams="/recherche/index?dataType=teams"
+    data-srcpersons="/recherche/index?dataType=persons"
+>
+    <div class="modalsMenuSearch__content modalsMenuSearch__content--search"></div>
+    <div class="modalsMenuSearch__loader">
+        
+<svg class="starAnimated" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" width="64" height="64" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style>
+        <![CDATA[
+            #eHtr1IfNndV3 {animation: eHtr1IfNndV3_s_do 3500ms linear infinite normal forwards}@keyframes eHtr1IfNndV3_s_do { 0% {stroke-dashoffset: 244.174465;animation-timing-function: cubic-bezier(0.68,-0.55,0.265,1.55)} 50% {stroke-dashoffset: 0} 100% {stroke-dashoffset: 0}}
+            #eHtr1IfNndV4 {animation: eHtr1IfNndV4_s_do 3500ms linear infinite normal forwards}@keyframes eHtr1IfNndV4_s_do { 0% {stroke-dashoffset: 244.174465} 50% {stroke-dashoffset: 244.174465;animation-timing-function: cubic-bezier(0.68,-0.55,0.265,1.55)} 100% {stroke-dashoffset: 0}}]]>
+    </style>
+    <path d="M32,1.6L24.5,24.8h-24.5L19.8,39.1L12.2,62.3L32,48L51.8,62.3L44.3,39.1L64,24.8h-24.5L32,1.6v0Z" transform="matrix(0.830678 0 0 0.830678 5.418304 5.459838)" fill="none" stroke="currentColor" stroke-width="4" class="starAnimated__backgroundLine" />
+    <path id="eHtr1IfNndV3" d="M13.450226,24.800002L0,24.8L19.8,39.1L12.2,62.3L32,48L51.8,62.3L44.3,39.1L64,24.8h-24.5L31.999998,1.599996c0,0-5.249999,16.240003-7.499998,23.200004h-11.74801" transform="matrix(0.830678 0 0 0.830678 5.418304 5.459838)" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" stroke-dashoffset="244.174465" stroke-dasharray="244.174465" class="starAnimated__animatedLine" />
+    <path id="eHtr1IfNndV4" d="M13.450226,24.800002L0,24.8L19.8,39.1L12.2,62.3L32,48L51.8,62.3L44.3,39.1L64,24.8h-24.5L31.999998,1.599996c0,0-5.249999,16.240003-7.499998,23.200004l-9.669776.000002" transform="matrix(0.830678 0 0 0.830678 5.418304 5.459838)" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square" stroke-dashoffset="244.174465" stroke-dasharray="244.174465" class="starAnimated__frontLine" />
+</svg>
+
+
+    </div>
+</div>
+
+<div class="modalsMenuSearchOverlay"></div>
+
+            <div id="modalFeedback" class="modal  " >
+    <div class="modal__wrapper">
+        <div class="modal__titleContainer">
+            
+            <div class="modal__title"></div>
+
+            <button aria-label="Fermer" class="modal__close">
+                
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M13.86 12.795a.747.747 0 1 0-1.058 1.057l6.923 6.923c.15.15.337.218.532.218a.747.747 0 0 0 .532-1.275l-6.922-6.923h-.007ZM4.283 3.217a.747.747 0 1 0-1.058 1.058l6.923 6.922c.15.15.337.218.532.218a.747.747 0 0 0 .533-1.275l-6.93-6.923ZM10.14 12.795l-6.923 6.923a.747.747 0 0 0 .533 1.274.768.768 0 0 0 .532-.217l6.923-6.922a.747.747 0 1 0-1.058-1.058h-.007ZM13.327 11.422a.768.768 0 0 0 .533-.217l6.922-6.923a.747.747 0 1 0-1.057-1.057l-6.923 6.923a.747.747 0 0 0 .533 1.274h-.008Z"/>
+</svg>
+
+
+            </button>
+        </div>
+
+        <div class="modal__content"></div>
+    </div>
+</div>
+             <div id="modalContact" class="modal  " >
+    <div class="modal__wrapper">
+        <div class="modal__titleContainer">
+            
+            <div class="modal__title"></div>
+
+            <button aria-label="Fermer" class="modal__close">
+                
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M13.86 12.795a.747.747 0 1 0-1.058 1.057l6.923 6.923c.15.15.337.218.532.218a.747.747 0 0 0 .532-1.275l-6.922-6.923h-.007ZM4.283 3.217a.747.747 0 1 0-1.058 1.058l6.923 6.922c.15.15.337.218.532.218a.747.747 0 0 0 .533-1.275l-6.93-6.923ZM10.14 12.795l-6.923 6.923a.747.747 0 0 0 .533 1.274.768.768 0 0 0 .532-.217l6.923-6.922a.747.747 0 1 0-1.058-1.058h-.007ZM13.327 11.422a.768.768 0 0 0 .533-.217l6.922-6.923a.747.747 0 1 0-1.057-1.057l-6.923 6.923a.747.747 0 0 0 .533 1.274h-.008Z"/>
+</svg>
+
+
+            </button>
+        </div>
+
+        <div class="modal__content"></div>
+    </div>
+</div>
+             <div id="modalUserGameShare" class="modal modal--fullscreen " >
+    <div class="modal__wrapper">
+        <div class="modal__titleContainer">
+            
+            <div class="modal__title">Partager</div>
+
+            <button aria-label="Fermer" class="modal__close">
+                
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M13.86 12.795a.747.747 0 1 0-1.058 1.057l6.923 6.923c.15.15.337.218.532.218a.747.747 0 0 0 .532-1.275l-6.922-6.923h-.007ZM4.283 3.217a.747.747 0 1 0-1.058 1.058l6.923 6.922c.15.15.337.218.532.218a.747.747 0 0 0 .533-1.275l-6.93-6.923ZM10.14 12.795l-6.923 6.923a.747.747 0 0 0 .533 1.274.768.768 0 0 0 .532-.217l6.923-6.922a.747.747 0 1 0-1.058-1.058h-.007ZM13.327 11.422a.768.768 0 0 0 .533-.217l6.922-6.923a.747.747 0 1 0-1.057-1.057l-6.923 6.923a.747.747 0 0 0 .533 1.274h-.008Z"/>
+</svg>
+
+
+            </button>
+        </div>
+
+        <div class="modal__content"></div>
+    </div>
+</div>
+
+                        <div id="modalDisqusThread" class="modal  " >
+    <div class="modal__wrapper">
+        <div class="modal__titleContainer">
+            
+            <div class="modal__title">Top commentaires</div>
+
+            <button aria-label="Fermer" class="modal__close">
+                
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M13.86 12.795a.747.747 0 1 0-1.058 1.057l6.923 6.923c.15.15.337.218.532.218a.747.747 0 0 0 .532-1.275l-6.922-6.923h-.007ZM4.283 3.217a.747.747 0 1 0-1.058 1.058l6.923 6.922c.15.15.337.218.532.218a.747.747 0 0 0 .533-1.275l-6.93-6.923ZM10.14 12.795l-6.923 6.923a.747.747 0 0 0 .533 1.274.768.768 0 0 0 .532-.217l6.923-6.922a.747.747 0 1 0-1.058-1.058h-.007ZM13.327 11.422a.768.768 0 0 0 .533-.217l6.922-6.923a.747.747 0 1 0-1.057-1.057l-6.923 6.923a.747.747 0 0 0 .533 1.274h-.008Z"/>
+</svg>
+
+
+            </button>
+        </div>
+
+        <div class="modal__content">                <iframe frameborder="0" id="disqus_thread_modal" class="disqus" width='100%' height='100%'></iframe>
+            </div>
+    </div>
+</div>
+
+                        <div id="modalMatchStatComparator" class="modal  " >
+    <div class="modal__wrapper">
+        <div class="modal__titleContainer">
+            
+            <div class="modal__title">Comparer les stats du match</div>
+
+            <button aria-label="Fermer" class="modal__close">
+                
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M13.86 12.795a.747.747 0 1 0-1.058 1.057l6.923 6.923c.15.15.337.218.532.218a.747.747 0 0 0 .532-1.275l-6.922-6.923h-.007ZM4.283 3.217a.747.747 0 1 0-1.058 1.058l6.923 6.922c.15.15.337.218.532.218a.747.747 0 0 0 .533-1.275l-6.93-6.923ZM10.14 12.795l-6.923 6.923a.747.747 0 0 0 .533 1.274.768.768 0 0 0 .532-.217l6.923-6.922a.747.747 0 1 0-1.058-1.058h-.007ZM13.327 11.422a.768.768 0 0 0 .533-.217l6.922-6.923a.747.747 0 1 0-1.057-1.057l-6.923 6.923a.747.747 0 0 0 .533 1.274h-.008Z"/>
+</svg>
+
+
+            </button>
+        </div>
+
+        <div class="modal__content">                <div id="matchStatComparator"></div>
+            </div>
+    </div>
+</div>
+
+            <div id="modalLineupSurvey" class="modal modal--fullscreen " >
+    <div class="modal__wrapper">
+        <div class="modal__titleContainer">
+            
+            <div class="modal__title"></div>
+
+            <button aria-label="Fermer" class="modal__close">
+                
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M13.86 12.795a.747.747 0 1 0-1.058 1.057l6.923 6.923c.15.15.337.218.532.218a.747.747 0 0 0 .532-1.275l-6.922-6.923h-.007ZM4.283 3.217a.747.747 0 1 0-1.058 1.058l6.923 6.922c.15.15.337.218.532.218a.747.747 0 0 0 .533-1.275l-6.93-6.923ZM10.14 12.795l-6.923 6.923a.747.747 0 0 0 .533 1.274.768.768 0 0 0 .532-.217l6.923-6.922a.747.747 0 1 0-1.058-1.058h-.007ZM13.327 11.422a.768.768 0 0 0 .533-.217l6.922-6.923a.747.747 0 1 0-1.057-1.057l-6.923 6.923a.747.747 0 0 0 .533 1.274h-.008Z"/>
+</svg>
+
+
+            </button>
+        </div>
+
+        <div class="modal__content"></div>
+    </div>
+</div>
+
+                <div class="userGameShare__imageContent" data-proxy-url="https://www.footmercato.net/image/proxy/" data-script-canvas="https://www.footmercato.net/lib/html2canvas_1.4.1.js"></div>
+
+                                                                                        cript id="spclader" src="https://sdk.privacy-center.org/f9357bde-9176-4d6c-b26b-5bcf904eed4c/loader.js?target=www.footmercato.net" defer ></script<script src="https://c.amazon-adsystem.com/aax2/apstag.js" defer ></script>
+                    <script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" defer></script>
+                    <script src="https://www.footmercato.net/lib/prebid9.30.0.js" onerror="window.adManagerBlocked = true;" defer ></script>
+            
+                <script src="https://www.footmercato.net/lib/smarttag_24112022_fr_3.js" defer></script>
+
+
+            <script src="https://www.footmercato.net/build/js/common.2d87c420.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/darkModeManager.8b4d371c.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/modalManager.703db809.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/lazyloadScriptManager.94cb74ed.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/lazyloadMediaManager.3cc0099d.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/interfaceScrollManager.94031865.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/filtersManager.f2e0524e.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/tableManager.6f4b7a8c.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/favoriteManager.84bb90ab.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/searchManager.12d6e050.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/tabsManager.6812dd79.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/modalsMenuSearchManager.1906addf.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/blockHorizontalManager.951e5a2a.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/paginationManager.32d43ee5.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/articlesFlashManager.33754df9.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/liveManager.f89449d0.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/formManager.3d8414f0.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/sidePaginationManager.e05924cf.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/surveyManager.dc83562d.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/pronosticManager.04209499.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/quizzManager.12c3cc29.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/userGameShareManager.59cf580c.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/matchUserPlayerRatingsManager.033e562e.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/elevenLineupSurveyManager.5922babe.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/squadLineupSurveyManager.912a9230.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/lineupSurveysSelector.4e23daa7.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/disqusManager.f113beeb.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/promoteApp.42702690.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/squadLineupSurveyCardManager.81751b79.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/pageDataHeaderManager.8a3b7d89.js" defer></script>
+            <script src="https://www.footmercato.net/build/js/taboola.cb0c4770.js" defer></script>
+                                        <script src="https://www.footmercato.net/build/js/adManager.b49f81ab.js" onerror="window.adManagerBlocked = true;"></script>
+                    
+    <script src="https://www.footmercato.net/build/js/selectManager.0b925c8f.js" defer></script>
+
+    
+            <div popover id="popoverClipboard" class="popover">
+        <div class="popover__content">
+            <div class="popover__content__text">Copié dans le presse-papier</div>
+        </div>
+    </div>
+
+    </body>
+</html>
