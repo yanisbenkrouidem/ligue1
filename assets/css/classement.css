@@ -1,0 +1,255 @@
+:root {
+    --bg-dark: #121212;
+    --row-hover: #1e1e1e;
+    --text-white: #ffffff;
+    --text-grey: #a0a0a0;
+    --text-muted: #666666;
+    
+    --win-color: #28a745;
+    --draw-color: #6c757d;
+    --loss-color: #dc3545;
+
+    --zone-ucl: #3b82f6; /* Blue for UCL */
+    --zone-uel: #8b5cf6; /* Purple for UEL */
+    --zone-uecl: #10b981; /* Green for UECL */
+    --zone-playoff: #f59e0b; /* Orange for Barrage */
+    --zone-rel: #ef4444; /* Red for Relégation */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 50px;
+}
+
+.classement-container {
+    max-width: 1800px;
+    width: 98%;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.table-section {
+    flex: 1;
+    background: #181818;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.stats-section {
+    width: 350px;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.classement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.classement-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+table.classement-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+table.classement-table th {
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: 15px 10px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #333;
+}
+
+table.classement-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #2a2a2a;
+    color: var(--text-grey);
+}
+
+table.classement-table tr:hover td {
+    background-color: var(--row-hover);
+}
+
+/* Zone lines */
+table.classement-table tr.zone-ucl {
+    border-bottom: 2px solid var(--zone-ucl);
+}
+table.classement-table tr.zone-uel {
+    border-bottom: 2px solid var(--zone-uel);
+}
+table.classement-table tr.zone-uecl {
+    border-bottom: 2px solid var(--zone-uecl);
+}
+table.classement-table tr.zone-playoff {
+    border-bottom: 2px solid var(--zone-playoff);
+}
+table.classement-table tr.zone-rel {
+    border-bottom: 2px solid var(--zone-rel);
+}
+
+
+/* Alignments & Specific columns */
+.col-pos {
+    width: 30px;
+    color: var(--text-white) !important;
+    font-weight: bold;
+    text-align: right !important;
+}
+
+.col-club {
+    text-align: left !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-white) !important;
+    font-weight: 600;
+}
+
+.col-club img.club-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.col-pts {
+    color: var(--text-white) !important;
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+
+/* Form indicators */
+.col-forme {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.forme-badge {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.forme-w { background-color: var(--win-color); }
+.forme-d { background-color: var(--draw-color); }
+.forme-l { background-color: var(--loss-color); }
+
+/* Stats Sidebar */
+.stat-card {
+    background: #181818;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: var(--text-white);
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.stat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stat-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.stat-list li:last-child {
+    border-bottom: none;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.player-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.player-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.player-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.player-name {
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.player-club {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.player-stat {
+    color: var(--text-white);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+    .classement-container {
+        flex-direction: column;
+    }
+    .table-section, .stats-section {
+        width: 100%;
+    }
+    /* Hide some columns on mobile to keep it readable */
+    .hide-mobile {
+        display: none !important;
+    }
+}

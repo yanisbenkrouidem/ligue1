@@ -1,0 +1,132 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+require_once __DIR__ . '/../../config/database.php';
+
+// Google OAuth 2.0 Credentials
+$clientID = getenv('GOOGLE_CLIENT_ID') ?: 'YOUR_CLIENT_ID';
+$clientSecret = getenv('GOOGLE_CLIENT_SECRET') ?: 'YOUR_CLIENT_SECRET';
+
+// Determine the exact redirect URI to avoid mismatch errors
+if (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) {
+    $redirectUri = 'http://localhost:8000/src/pages/auth/google_login.php';
+} else {
+    $redirectUri = 'https://ligue1.benkrouidem.com/src/pages/auth/google_login.php';
+}
+
+if (!isset($_GET['code'])) {
+    // 1. Redirect to Google for authorization
+    $state = bin2hex(random_bytes(16));
+    $_SESSION['oauth2state'] = $state;
+
+    $authUrl = 'https://accounts.google.com/o/oauth2/v2/auth?' . http_build_query([
+        'client_id' => $clientID,
+        'redirect_uri' => $redirectUri,
+        'response_type' => 'code',
+        'scope' => 'email profile',
+        'state' => $state,
+        'access_type' => 'online'
+    ]);
+
+    header('Location: ' . $authUrl);
+    exit();
+} else {
+    // 2. We have a code, let's exchange it for an access token
+    if (empty($_GET['state']) || (isset($_SESSION['oauth2state']) && $_GET['state'] !== $_SESSION['oauth2state'])) {
+        if (isset($_SESSION['oauth2state'])) {
+            unset($_SESSION['oauth2state']);
+        }
+        exit('Invalid state');
+    }
+
+    $ch = curl_init('https://oauth2.googleapis.com/token');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+        'client_id' => $clientID,
+        'client_secret' => $clientSecret,
+        'redirect_uri' => $redirectUri,
+        'code' => $_GET['code'],
+        'grant_type' => 'authorization_code'
+    ]));
+    
+    // Disable SSL verification for local development, enable in production!
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+    $response = curl_exec($ch);
+    curl_close($ch);
+    $tokenData = json_decode($response, true);
+
+    if (isset($tokenData['error'])) {
+        exit('Error fetching token: ' . htmlspecialchars($tokenData['error_description'] ?? $tokenData['error']));
+    }
+
+    $accessToken = $tokenData['access_token'];
+
+    // 3. Get User Profile from Google
+    $ch = curl_init('https://www.googleapis.com/oauth2/v2/userinfo');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Bearer ' . $accessToken]);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    $userResponse = curl_exec($ch);
+    curl_close($ch);
+    
+    $googleUser = json_decode($userResponse, true);
+
+    if (isset($googleUser['error'])) {
+        exit('Error fetching user info');
+    }
+
+    $email = $googleUser['email'];
+    $googleId = $googleUser['id'];
+    $prenom = $googleUser['given_name'] ?? '';
+    $nom = $googleUser['family_name'] ?? '';
+
+    // 4. Log the user in or register them in our database
+    try {
+        $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE email = :email");
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            // User exists -> Log them in
+            $_SESSION['user'] = $user['pseudoutil'];
+        } else {
+            // User does not exist -> Register them automatically
+            // Create a pseudo from email (everything before @)
+            $pseudoBase = explode('@', $email)[0];
+            $pseudo = $pseudoBase;
+            
+            // Ensure pseudo is unique
+            $pseudoStmt = $pdo->prepare("SELECT COUNT(*) FROM utilisateur WHERE pseudoutil = :pseudo");
+            $counter = 1;
+            while(true) {
+                $pseudoStmt->execute(['pseudo' => $pseudo]);
+                if($pseudoStmt->fetchColumn() == 0) break;
+                $pseudo = $pseudoBase . $counter;
+                $counter++;
+            }
+
+            // Insert into database with random password (since they login via Google)
+            $randomPassword = password_hash(bin2hex(random_bytes(10)), PASSWORD_DEFAULT);
+            $insertStmt = $pdo->prepare("INSERT INTO utilisateur (pseudoutil, mdputil, nom, prenom, email, date_naissance, civilite, code_postal) VALUES (:pseudo, :mdp, :nom, :prenom, :email, '2000-01-01', 'Monsieur', '00000')");
+            $insertStmt->execute([
+                ':pseudo' => $pseudo,
+                ':mdp' => $randomPassword,
+                ':nom' => $nom,
+                ':prenom' => $prenom,
+                ':email' => $email
+            ]);
+
+            $_SESSION['user'] = $pseudo;
+        }
+
+        // Redirect to dashboard
+        header("Location: /src/pages/auth/dashboard.php");
+        exit();
+
+    } catch (PDOException $e) {
+        exit("Erreur de base de données : " . $e->getMessage());
+    }
+}
