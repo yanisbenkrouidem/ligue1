@@ -92,7 +92,7 @@ function getFormIcon($result) {
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Classement Ligue 1</title>
     <link rel="icon" type="image/jpg" href="/assets/images/logos/ligue1.jpg">
     <link rel="stylesheet" href="/assets/css/navbar.css">

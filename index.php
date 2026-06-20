@@ -38,7 +38,7 @@ $comments = $stmtComments->fetchAll(PDO::FETCH_ASSOC);
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Ligue 1 McDonalds</title>
     <link rel="icon" type="image/jpg" href="/assets/images/logos/ligue1.jpg">
     <link rel="stylesheet" href="/assets/css/main.css">

@@ -190,8 +190,15 @@ $dates = array_keys($matchesByDate);
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Calendrier des Matchs - Ligue 1 McDonalds</title>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ligue 1 McDonalds - Matchs et Résultats">
+    <meta property="og:description" content="Retrouvez le calendrier complet et les résultats de tous les matchs de la Ligue 1 McDonalds.">
+    <meta property="og:image" content="https://ligue1.benkrouidem.com/assets/images/logos/ligue1.jpg">
+    <meta property="og:url" content="https://ligue1.benkrouidem.com/src/pages/matches.php">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/jpg" href="/assets/images/logos/ligue1.jpg">
     <link rel="stylesheet" href="/assets/css/navbar.css">
     <link rel="stylesheet" href="/assets/css/matches.css">
