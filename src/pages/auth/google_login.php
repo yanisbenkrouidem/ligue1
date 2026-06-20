@@ -83,9 +83,8 @@ if (!isset($_GET['code'])) {
 
     // 4. Log the user in or register them in our database
     try {
-        $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE pseudoutil = :pseudo OR email = :email");
+        $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE pseudoutil = :pseudo");
         $stmt->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -108,14 +107,10 @@ if (!isset($_GET['code'])) {
             }
 
             $randomPassword = bin2hex(random_bytes(8));
-            // Provide default values for all columns that might be required based on register.php
-            $insertStmt = $pdo->prepare("INSERT INTO utilisateur (pseudoutil, mdputil, nom, prenom, email, date_naissance, civilite, code_postal) VALUES (:pseudo, :mdputil, :nom, :prenom, :email, '2000-01-01', 'Monsieur', '00000')");
+            $insertStmt = $pdo->prepare("INSERT INTO utilisateur (pseudoutil, mdputil) VALUES (:pseudo, :mdputil)");
             $insertStmt->execute([
                 'pseudo' => $pseudo,
-                'mdputil' => $randomPassword,
-                'nom' => $googleUser['family_name'] ?? 'Inconnu',
-                'prenom' => $googleUser['given_name'] ?? $pseudo,
-                'email' => $email
+                'mdputil' => $randomPassword
             ]);
 
             $_SESSION['user'] = $pseudo;

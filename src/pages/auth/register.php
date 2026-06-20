@@ -5,36 +5,20 @@ require_once __DIR__ . '/../../config/database.php';
 $inscriptionMessage = "";
 
 if (isset($_POST["btninscrit"])) {
-    $email = htmlspecialchars($_POST["email"]);
     $mdp = $_POST["mdp"];
-    $nom = htmlspecialchars($_POST["nom"]);
-    $prenom = htmlspecialchars($_POST["prenom"]);
-    $date_naissance = htmlspecialchars($_POST["date_naissance"]);
-    $civilite = htmlspecialchars($_POST["civilite"]);
-    $code_postal = htmlspecialchars($_POST["code_postal"]);
-
-    // Use email as pseudo since we are replacing the old pseudo system with email
-    // Or we keep pseudo as part of the form. I'll add "pseudo" to the form since it is the primary key basically.
     $pseudo = htmlspecialchars($_POST["pseudo"]);
 
-    $req = $bdd->prepare("SELECT pseudoutil FROM utilisateur WHERE pseudoutil = :pseudo OR email = :email");
+    $req = $bdd->prepare("SELECT pseudoutil FROM utilisateur WHERE pseudoutil = :pseudo");
     $req->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
-    $req->bindParam(':email', $email, PDO::PARAM_STR);
     $req->execute();
     $uneligne = $req->fetch();
 
     if ($uneligne) {
-        $inscriptionMessage = "<p style='color: red; text-align: center; font-weight: bold;'>Ce pseudo ou cet e-mail est déjà utilisé.</p>";
+        $inscriptionMessage = "<p style='color: red; text-align: center; font-weight: bold;'>Ce pseudo est déjà utilisé.</p>";
     } else {
-        $req = $bdd->prepare("INSERT INTO utilisateur (pseudoutil, mdputil, nom, prenom, date_naissance, civilite, code_postal, email) VALUES (:pse, :mdp, :nom, :pre, :date, :civ, :cp, :email)");
+        $req = $bdd->prepare("INSERT INTO utilisateur (pseudoutil, mdputil) VALUES (:pse, :mdp)");
         $req->bindParam(':pse', $pseudo, PDO::PARAM_STR);
         $req->bindParam(':mdp', $mdp, PDO::PARAM_STR);
-        $req->bindParam(':nom', $nom, PDO::PARAM_STR);
-        $req->bindParam(':pre', $prenom, PDO::PARAM_STR);
-        $req->bindParam(':date', $date_naissance, PDO::PARAM_STR);
-        $req->bindParam(':civ', $civilite, PDO::PARAM_STR);
-        $req->bindParam(':cp', $code_postal, PDO::PARAM_STR);
-        $req->bindParam(':email', $email, PDO::PARAM_STR);
 
         if ($req->execute()) {
             $_SESSION["user"] = $pseudo;
