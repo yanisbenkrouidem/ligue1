@@ -247,7 +247,7 @@
 /* Responsive */
 @media (max-width: 950px) {
     .l1-nav-bottom {
-        padding: 0 15px;
+        padding: 0 10px;
         flex-wrap: wrap;
         height: auto;
         padding-top: 10px;
@@ -260,14 +260,23 @@
     }
     .l1-nav-right-group {
         width: 100%;
-        justify-content: flex-end;
+        justify-content: center;
+        margin-bottom: 10px;
     }
     .l1-nav-bottom-links {
-        display: none; /* Hide links on mobile for cleaner look, or implement hamburger */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 15px;
     }
     .btn-abonner, .btn-connecter {
         padding: 8px 12px;
         font-size: 11px;
+    }
+    .notif-menu {
+        width: 250px;
+        right: -100px; /* Center it more on mobile */
     }
 }
 

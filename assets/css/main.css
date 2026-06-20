@@ -316,11 +316,41 @@ footer {
     }
 
     .area1--content, .area2--content, .area3--content, .area4--content {
-        padding: 40px;
+        padding: 30px 20px;
+    }
+
+    .area1--img1, .area1--img2, .area2--img1, .area2--img2, .area3--img1, .area4--img1 {
+        height: 200px;
+        grid-row: auto !important;
+        grid-column: auto !important;
     }
 
     .area5 {
         height: 200px;
+    }
+
+    .hero-kids-content {
+        padding: 10px;
+    }
+    
+    .kids-img-logo {
+        max-height: 80px;
+        margin-bottom: 20px;
+    }
+    
+    .kids-text {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    
+    .btn-kids {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+    
+    .custom-alert-box {
+        width: 85%;
+        padding: 20px;
     }
 
     footer {
@@ -586,10 +616,20 @@ footer {
 @media (max-width: 768px) {
     .fan-zone {
         flex-direction: column;
-        padding: 20px;
+        padding: 20px 10px;
+        gap: 20px;
     }
     .fan-zone-sidebar {
         flex: auto;
+    }
+    .carousel-nav-btn {
+        right: 0;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    .fan-zone-carousel-wrapper {
+        padding-right: 35px;
     }
 }
 

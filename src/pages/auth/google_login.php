@@ -54,7 +54,6 @@ if (!isset($_GET['code'])) {
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
     $response = curl_exec($ch);
-    curl_close($ch);
     $tokenData = json_decode($response, true);
 
     if (isset($tokenData['error'])) {
@@ -69,7 +68,6 @@ if (!isset($_GET['code'])) {
     curl_setopt($ch, CURLOPT_HTTPHEADER, ['Authorization: Bearer ' . $accessToken]);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     $userResponse = curl_exec($ch);
-    curl_close($ch);
     
     $googleUser = json_decode($userResponse, true);
 
@@ -78,14 +76,15 @@ if (!isset($_GET['code'])) {
     }
 
     $email = $googleUser['email'];
-    $googleId = $googleUser['id'];
-    $prenom = $googleUser['given_name'] ?? '';
-    $nom = $googleUser['family_name'] ?? '';
+    
+    // Create a pseudo from email (everything before @)
+    $pseudoBase = explode('@', $email)[0];
+    $pseudo = $pseudoBase;
 
     // 4. Log the user in or register them in our database
     try {
-        $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE email = :email");
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE pseudoutil = :pseudo");
+        $stmt->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -94,29 +93,23 @@ if (!isset($_GET['code'])) {
             $_SESSION['user'] = $user['pseudoutil'];
         } else {
             // User does not exist -> Register them automatically
-            // Create a pseudo from email (everything before @)
-            $pseudoBase = explode('@', $email)[0];
-            $pseudo = $pseudoBase;
-            
-            // Ensure pseudo is unique
-            $pseudoStmt = $pdo->prepare("SELECT COUNT(*) FROM utilisateur WHERE pseudoutil = :pseudo");
-            $counter = 1;
-            while(true) {
-                $pseudoStmt->execute(['pseudo' => $pseudo]);
-                if($pseudoStmt->fetchColumn() == 0) break;
-                $pseudo = $pseudoBase . $counter;
-                $counter++;
+            // Handle duplicate pseudos by appending a number
+            $suffix = 1;
+            while (true) {
+                $checkStmt = $pdo->prepare("SELECT COUNT(*) FROM utilisateur WHERE pseudoutil = :pseudo");
+                $checkStmt->execute(['pseudo' => $pseudo]);
+                if ($checkStmt->fetchColumn() == 0) {
+                    break;
+                }
+                $pseudo = $pseudoBase . $suffix;
+                $suffix++;
             }
 
-            // Insert into database with random password (since they login via Google)
-            $randomPassword = password_hash(bin2hex(random_bytes(10)), PASSWORD_DEFAULT);
-            $insertStmt = $pdo->prepare("INSERT INTO utilisateur (pseudoutil, mdputil, nom, prenom, email, date_naissance, civilite, code_postal) VALUES (:pseudo, :mdp, :nom, :prenom, :email, '2000-01-01', 'Monsieur', '00000')");
+            $randomPassword = bin2hex(random_bytes(8));
+            $insertStmt = $pdo->prepare("INSERT INTO utilisateur (pseudoutil, mdputil) VALUES (:pseudo, :mdputil)");
             $insertStmt->execute([
-                ':pseudo' => $pseudo,
-                ':mdp' => $randomPassword,
-                ':nom' => $nom,
-                ':prenom' => $prenom,
-                ':email' => $email
+                'pseudo' => $pseudo,
+                'mdputil' => $randomPassword
             ]);
 
             $_SESSION['user'] = $pseudo;
