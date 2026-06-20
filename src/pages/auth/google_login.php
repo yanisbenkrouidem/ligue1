@@ -83,8 +83,9 @@ if (!isset($_GET['code'])) {
 
     // 4. Log the user in or register them in our database
     try {
-        $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE pseudoutil = :pseudo");
+        $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE pseudoutil = :pseudo OR email = :email");
         $stmt->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -95,25 +96,33 @@ if (!isset($_GET['code'])) {
             // User does not exist -> Register them automatically
             // Handle duplicate pseudos by appending a number
             $suffix = 1;
+            $originalPseudo = $pseudo;
             while (true) {
                 $checkStmt = $pdo->prepare("SELECT COUNT(*) FROM utilisateur WHERE pseudoutil = :pseudo");
                 $checkStmt->execute(['pseudo' => $pseudo]);
                 if ($checkStmt->fetchColumn() == 0) {
                     break;
                 }
-                $pseudo = $pseudoBase . $suffix;
+                $pseudo = $originalPseudo . $suffix;
                 $suffix++;
             }
 
             $randomPassword = bin2hex(random_bytes(8));
-            $insertStmt = $pdo->prepare("INSERT INTO utilisateur (pseudoutil, mdputil) VALUES (:pseudo, :mdputil)");
+            // Provide default values for all columns that might be required based on register.php
+            $insertStmt = $pdo->prepare("INSERT INTO utilisateur (pseudoutil, mdputil, nom, prenom, email, date_naissance, civilite, code_postal) VALUES (:pseudo, :mdputil, :nom, :prenom, :email, '2000-01-01', 'Monsieur', '00000')");
             $insertStmt->execute([
                 'pseudo' => $pseudo,
-                'mdputil' => $randomPassword
+                'mdputil' => $randomPassword,
+                'nom' => $googleUser['family_name'] ?? 'Inconnu',
+                'prenom' => $googleUser['given_name'] ?? $pseudo,
+                'email' => $email
             ]);
 
             $_SESSION['user'] = $pseudo;
         }
+
+        // Force session write before redirect to prevent race conditions on serverless
+        session_write_close();
 
         // Redirect to dashboard
         header("Location: /src/pages/auth/dashboard.php");
@@ -121,5 +130,7 @@ if (!isset($_GET['code'])) {
 
     } catch (PDOException $e) {
         exit("Erreur de base de données : " . $e->getMessage());
+    } catch (Exception $e) {
+        exit("Erreur : " . $e->getMessage());
     }
 }
