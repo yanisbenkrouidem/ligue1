@@ -3,14 +3,18 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 require_once __DIR__ . '/src/config/database.php';
+require_once __DIR__ . '/src/config/auth.php';
+
+// Restore auth from cookie (needed for Vercel serverless)
+$currentUser = auth_check();
 
 // Handle new comment
-if (isset($_POST['btnSubmitComment']) && isset($_SESSION['user'])) {
+if (isset($_POST['btnSubmitComment']) && $currentUser) {
     $contenu = htmlspecialchars($_POST['comment_text']);
     if (!empty(trim($contenu))) {
         // Find idutil
         $stmtUser = $pdo->prepare("SELECT idutil FROM utilisateur WHERE pseudoutil = :pseudo");
-        $stmtUser->execute(['pseudo' => $_SESSION['user']]);
+        $stmtUser->execute(['pseudo' => $currentUser]);
         $user = $stmtUser->fetch();
         if ($user) {
             $stmt = $pdo->prepare("INSERT INTO commentaire (idutil, libelle, datecom, idjournee, numrenc) VALUES (:idutil, :contenu, NOW(), 1, 1)");
@@ -100,9 +104,9 @@ $comments = $stmtComments->fetchAll(PDO::FETCH_ASSOC);
             <p>Les messages s'effacent automatiquement après 15 minutes.</p>
 
             <div class="comment-form-container">
-                <?php if (isset($_SESSION['user'])): ?>
+                <?php if ($currentUser): ?>
                     <form method="POST" action="/index.php#espace-fan">
-                        <textarea name="comment_text" class="comment-input" rows="4" placeholder="Partagez votre passion, <?php echo htmlspecialchars($_SESSION['user']); ?>..." required></textarea>
+                        <textarea name="comment_text" class="comment-input" rows="4" placeholder="Partagez votre passion, <?php echo htmlspecialchars($currentUser); ?>..." required></textarea>
                         <button type="submit" name="btnSubmitComment" class="btn-black">Publier</button>
                     </form>
                 <?php else: ?>

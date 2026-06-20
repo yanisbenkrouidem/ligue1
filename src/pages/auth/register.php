@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../config/auth.php';
 
 $inscriptionMessage = "";
 
@@ -21,7 +22,7 @@ if (isset($_POST["btninscrit"])) {
         $req->bindParam(':mdp', $mdp, PDO::PARAM_STR);
 
         if ($req->execute()) {
-            $_SESSION["user"] = $pseudo;
+            auth_login($pseudo);
             header("Location: /src/pages/auth/dashboard.php");
             exit();
         } else {

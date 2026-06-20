@@ -1,21 +1,23 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../config/auth.php';
 
-// Redirect to login if not authenticated
-if (!isset($_SESSION["user"])) {
+// Redirect to login if not authenticated (uses cookie-based auth for Vercel)
+$authenticatedUser = auth_check();
+if (!$authenticatedUser) {
     header("Location: /src/pages/auth/login.php");
     exit();
 }
 
-$pseudo = htmlspecialchars($_SESSION["user"]);
+$pseudo = htmlspecialchars($authenticatedUser);
 
 // Handle account deletion
 if (isset($_POST['btnDeleteAccount'])) {
     $del = $pdo->prepare("DELETE FROM utilisateur WHERE pseudoutil = :pseudo");
     $del->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
     if ($del->execute()) {
-        session_destroy();
+        auth_logout();
         header("Location: /index.php");
         exit();
     }

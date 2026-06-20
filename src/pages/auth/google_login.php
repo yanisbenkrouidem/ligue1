@@ -3,6 +3,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../config/auth.php';
 
 // Google OAuth 2.0 Credentials
 $clientID = getenv('GOOGLE_CLIENT_ID') ?: 'YOUR_CLIENT_ID';
@@ -17,8 +18,17 @@ if (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false) {
 
 if (!isset($_GET['code'])) {
     // 1. Redirect to Google for authorization
+    // On Vercel serverless, sessions may not persist between requests.
+    // We store the state in a cookie as a fallback.
     $state = bin2hex(random_bytes(16));
     $_SESSION['oauth2state'] = $state;
+    setcookie('oauth2state', $state, [
+        'expires' => time() + 600, // 10 minutes
+        'path' => '/',
+        'secure' => true,
+        'httponly' => true,
+        'samesite' => 'Lax'
+    ]);
 
     $authUrl = 'https://accounts.google.com/o/oauth2/v2/auth?' . http_build_query([
         'client_id' => $clientID,
@@ -33,10 +43,10 @@ if (!isset($_GET['code'])) {
     exit();
 } else {
     // 2. We have a code, let's exchange it for an access token
-    if (empty($_GET['state']) || (isset($_SESSION['oauth2state']) && $_GET['state'] !== $_SESSION['oauth2state'])) {
-        if (isset($_SESSION['oauth2state'])) {
-            unset($_SESSION['oauth2state']);
-        }
+    // Check state from session OR cookie (Vercel fallback)
+    $savedState = $_SESSION['oauth2state'] ?? $_COOKIE['oauth2state'] ?? null;
+    
+    if (empty($_GET['state']) || ($savedState !== null && $_GET['state'] !== $savedState)) {
         exit('Invalid state');
     }
 
@@ -49,8 +59,6 @@ if (!isset($_GET['code'])) {
         'code' => $_GET['code'],
         'grant_type' => 'authorization_code'
     ]));
-    
-    // Disable SSL verification for local development, enable in production!
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
     $response = curl_exec($ch);
@@ -89,11 +97,10 @@ if (!isset($_GET['code'])) {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user) {
-            // User exists -> Log them in
-            $_SESSION['user'] = $user['pseudoutil'];
+            // User exists -> Log them in via cookie
+            auth_login($user['pseudoutil']);
         } else {
             // User does not exist -> Register them automatically
-            // Handle duplicate pseudos by appending a number
             $suffix = 1;
             $originalPseudo = $pseudo;
             while (true) {
@@ -113,11 +120,9 @@ if (!isset($_GET['code'])) {
                 'mdputil' => $randomPassword
             ]);
 
-            $_SESSION['user'] = $pseudo;
+            // Log them in via cookie
+            auth_login($pseudo);
         }
-
-        // Force session write before redirect to prevent race conditions on serverless
-        session_write_close();
 
         // Redirect to dashboard
         header("Location: /src/pages/auth/dashboard.php");

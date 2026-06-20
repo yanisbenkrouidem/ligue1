@@ -6,9 +6,11 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+require_once __DIR__ . '/../config/auth.php';
 
-$isConnected = isset($_SESSION['user']);
-$username = $isConnected ? htmlspecialchars($_SESSION['user']) : '';
+$navUser = auth_check();
+$isConnected = ($navUser !== null);
+$username = $isConnected ? htmlspecialchars($navUser) : '';
 ?>
 <header id="l1-navbar">
     <div class="l1-nav-bottom">

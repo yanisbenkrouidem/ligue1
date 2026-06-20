@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../config/auth.php';
 
 $connexionMessage = "";
 
@@ -16,7 +17,7 @@ if (isset($_POST["btnconnect"])) {
 
     if ($uneligne) {
         if ($mdp == $uneligne['mdputil']) {
-            $_SESSION["user"] = $pseudo;
+            auth_login($pseudo);
             header("Location: /src/pages/auth/dashboard.php");
             exit();
         } else {
