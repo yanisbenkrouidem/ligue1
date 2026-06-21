@@ -6,20 +6,33 @@ require_once __DIR__ . '/../../config/auth.php';
 $inscriptionMessage = "";
 
 if (isset($_POST["btninscrit"])) {
+    $email = htmlspecialchars($_POST["email"] ?? '');
     $mdp = $_POST["mdp"];
-    $pseudo = htmlspecialchars($_POST["pseudo"]);
+    $nom = htmlspecialchars($_POST["nom"] ?? '');
+    $prenom = htmlspecialchars($_POST["prenom"] ?? '');
+    $date_naissance = htmlspecialchars($_POST["date_naissance"] ?? '');
+    $civilite = htmlspecialchars($_POST["civilite"] ?? '');
+    $code_postal = htmlspecialchars($_POST["code_postal"] ?? '');
+    $pseudo = htmlspecialchars($_POST["pseudo"] ?? '');
 
-    $req = $bdd->prepare("SELECT pseudoutil FROM utilisateur WHERE pseudoutil = :pseudo");
+    $req = $bdd->prepare("SELECT pseudoutil FROM utilisateur WHERE pseudoutil = :pseudo OR email = :email");
     $req->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
+    $req->bindParam(':email', $email, PDO::PARAM_STR);
     $req->execute();
     $uneligne = $req->fetch();
 
     if ($uneligne) {
-        $inscriptionMessage = "<p style='color: red; text-align: center; font-weight: bold;'>Ce pseudo est déjà utilisé.</p>";
+        $inscriptionMessage = "<p style='color: red; text-align: center; font-weight: bold;'>Ce pseudo ou cet email est déjà utilisé.</p>";
     } else {
-        $req = $bdd->prepare("INSERT INTO utilisateur (pseudoutil, mdputil) VALUES (:pse, :mdp)");
+        $req = $bdd->prepare("INSERT INTO utilisateur (pseudoutil, mdputil, nom, prenom, date_naissance, civilite, code_postal, email) VALUES (:pse, :mdp, :nom, :pre, :date, :civ, :cp, :email)");
         $req->bindParam(':pse', $pseudo, PDO::PARAM_STR);
         $req->bindParam(':mdp', $mdp, PDO::PARAM_STR);
+        $req->bindParam(':nom', $nom, PDO::PARAM_STR);
+        $req->bindParam(':pre', $prenom, PDO::PARAM_STR);
+        $req->bindParam(':date', $date_naissance, PDO::PARAM_STR);
+        $req->bindParam(':civ', $civilite, PDO::PARAM_STR);
+        $req->bindParam(':cp', $code_postal, PDO::PARAM_STR);
+        $req->bindParam(':email', $email, PDO::PARAM_STR);
 
         if ($req->execute()) {
             auth_login($pseudo);

@@ -26,13 +26,40 @@ if (isset($_POST['btnDeleteAccount'])) {
 // Handle personal data update
 $msg_perso = "";
 if (isset($_POST['btnUpdatePerso'])) {
-    $msg_perso = "<p style='color: #4CAF50; font-size: 14px;'>Données personnelles mises à jour (Simulé : la base de données ne gère pas encore ces champs).</p>";
+    $upd_nom = htmlspecialchars($_POST['nom']);
+    $upd_prenom = htmlspecialchars($_POST['prenom']);
+    $upd_date = htmlspecialchars($_POST['date_naissance']);
+    $upd_civilite = htmlspecialchars($_POST['civilite']);
+    $upd_cp = htmlspecialchars($_POST['code_postal']);
+
+    $upd = $pdo->prepare("UPDATE utilisateur SET nom = :nom, prenom = :prenom, date_naissance = :date, civilite = :civ, code_postal = :cp WHERE pseudoutil = :pseudo");
+    $upd->bindParam(':nom', $upd_nom, PDO::PARAM_STR);
+    $upd->bindParam(':prenom', $upd_prenom, PDO::PARAM_STR);
+    $upd->bindParam(':date', $upd_date, PDO::PARAM_STR);
+    $upd->bindParam(':civ', $upd_civilite, PDO::PARAM_STR);
+    $upd->bindParam(':cp', $upd_cp, PDO::PARAM_STR);
+    $upd->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
+    
+    if ($upd->execute()) {
+        $msg_perso = "<p style='color: #4CAF50; font-size: 14px;'>Données personnelles mises à jour.</p>";
+    } else {
+        $msg_perso = "<p style='color: red; font-size: 14px;'>Erreur lors de la mise à jour.</p>";
+    }
 }
 
 // Handle email update
 $msg_email = "";
 if (isset($_POST['btnUpdateEmail'])) {
-    $msg_email = "<p style='color: #4CAF50; font-size: 14px;'>Adresse e-mail mise à jour (Simulé : la base de données ne gère pas encore l'e-mail).</p>";
+    $upd_email = htmlspecialchars($_POST['email']);
+    $upd = $pdo->prepare("UPDATE utilisateur SET email = :email WHERE pseudoutil = :pseudo");
+    $upd->bindParam(':email', $upd_email, PDO::PARAM_STR);
+    $upd->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
+    
+    if ($upd->execute()) {
+        $msg_email = "<p style='color: #4CAF50; font-size: 14px;'>Adresse e-mail mise à jour.</p>";
+    } else {
+        $msg_email = "<p style='color: red; font-size: 14px;'>Erreur lors de la mise à jour.</p>";
+    }
 }
 
 // Handle password change
