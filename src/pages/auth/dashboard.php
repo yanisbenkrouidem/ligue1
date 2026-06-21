@@ -121,10 +121,6 @@ $email = $user_data['email'] ?? '';
         <aside class="sidebar">
             <img src="/assets/images/avatar.png" alt="Profile Avatar" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 2px solid #333;">
             <div class="username"><?php echo $pseudo; ?></div>
-            
-            <ul class="nav-links">
-                <li><a href="#" class="active">Vue d'ensemble</a></li>
-            </ul>
 
             <div class="spacer"></div>
             <button class="btn-logout" onclick="window.location.href='/src/pages/auth/logout.php'">Me déconnecter</button>
