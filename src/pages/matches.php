@@ -292,7 +292,6 @@ $dates = array_keys($matchesByDate);
                                     if ($m['scoreclubdom'] !== null && $m['scoreclubext'] !== null && $m['scoreclubdom'] !== '' && $m['scoreclubext'] !== '') {
                                         $scoreDisplay = $m['scoreclubdom'] . ' - ' . $m['scoreclubext'];
                                         echo "<span class='match-time'>$scoreDisplay</span>";
-                                        echo "<button class='match-details-btn'>Voir détails</button>";
                                     } else {
                                         $time = substr($m['heurerenc'], 0, 5);
                                         echo "<span class='match-time'>$time</span>";
