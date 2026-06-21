@@ -142,7 +142,7 @@ function getFormIcon($result) {
                         // Add slight delay for each row
                         $delay = ($position % 10) * 50; 
                         
-                        echo "<tr class='$zoneClass' data-aos='fade-up' data-aos-delay='$delay'>";
+                        echo "<tr class='$zoneClass'>";
                         echo "<td class='col-pos'>$position</td>";
                         echo "<td class='col-club'>
                                 <img class='club-logo' src='/assets/images/logos/{$club['logo']}' alt='Logo'>
