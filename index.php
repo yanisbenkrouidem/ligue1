@@ -58,7 +58,7 @@ $comments = $stmtComments->fetchAll(PDO::FETCH_ASSOC);
         <div class="hero-kids-content">
             <img src="/assets/images/ligue1-kids-demande.webp" alt="A la demande" class="kids-img-demande" data-aos="fade-up" data-aos-delay="200">
             <img src="/assets/images/ligue1-kids-logo.webp" alt="Ligue 1 Kids" class="kids-img-logo" data-aos="fade-up" data-aos-delay="400">
-            <p class="kids-text" data-aos="fade-up" data-aos-delay="600">Hey les jeunes fans ! On a des émissions rien que pour vous !</p>
+            <p class="kids-text" data-aos="fade-up" data-aos-delay="600">Découvrez nos émissions exclusives spécialement créées pour les jeunes passionnés !</p>
             <a href="#" class="btn-kids" data-aos="fade-up" data-aos-delay="800">REGARDEZ MAINTENANT</a>
         </div>
     </section>
