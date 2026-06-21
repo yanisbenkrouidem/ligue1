@@ -100,8 +100,7 @@ $comments = $stmtComments->fetchAll(PDO::FETCH_ASSOC);
     <!-- Fan Zone: Comments -->
     <section id="espace-fan" class="fan-zone" data-aos="fade-up">
         <div class="fan-zone-sidebar">
-            <h2>Espace Fan</h2>
-            <p>Les messages s'effacent automatiquement après 15 minutes.</p>
+            <h2>Partage un moment avec nous !</h2>
 
             <div class="comment-form-container">
                 <?php if ($currentUser): ?>
